@@ -826,9 +826,9 @@ footer small {
 }
 .contact-watermark {
   position: absolute;
-  right: 0;
-  top: 0;
-  width: min(560px, 52vw);
+  right: 2%;
+  top: -220px;
+  width: min(460px, 44vw);
   opacity: 0.045;
   filter: invert(1);
   mix-blend-mode: screen;
@@ -1504,8 +1504,8 @@ header { position: relative; z-index: 10; }
 .contact-stage::after {
   content: "";
   position: absolute;
-  right: 0;
-  top: 0;
+  right: -25px;
+  top: -225px;
   width: min(560px, 52vw);
   aspect-ratio: 1;
   border: 1px solid var(--blue);
