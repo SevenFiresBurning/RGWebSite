@@ -1135,6 +1135,7 @@ footer small {
 .publishing-page {
   position: relative;
   isolation: isolate;
+}
   .publishing-page::before,
   .publishing-page::after {
   content: "";
@@ -1146,8 +1147,7 @@ footer small {
   width: min(420px, 38vw);
   aspect-ratio: 1;
 
-  border: 1px solid rgba(115, 153, 255, 0.13);
-  border-radius: 50%;
+border: 1px solid var(--blue);  border-radius: 50%;
 
   pointer-events: none;
   z-index: -1;
@@ -1161,7 +1161,7 @@ footer small {
 .publishing-page::after {
   animation-delay: 3s;
 }
-}
+
 
 .publishing-watermark {
   position: absolute;
@@ -1189,7 +1189,7 @@ transform-origin: center;
   }
 
   18% {
-    opacity: 0.14;
+    opacity: 0.2;
   }
 
   100% {
