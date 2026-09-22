@@ -1,16 +1,15 @@
 # Resistance & Ground Website
 
-Independent static website prepared from RGWebSite commit `d376012`.
+Static HTML, CSS and JavaScript. No build step is required.
 
-## Netlify
+## Hosting
 
-- Build command: leave blank
-- Publish directory: `.`
-- Production branch: `main`
+Netlify publish directory: `.` (repository root). Production branch: `main`. Mailing-list forms use Netlify Forms. Contact inquiries open a mailto draft.
 
-The mailing-list forms use Netlify Forms and become active after deployment.
+## Navigation
 
-## Jenny website link
+Production → Publishing → Artists → Mike’s Wilson. The artist retains its existing `music/mikes-wilson/` URL. The old `music/` page remains a discovery route. Web & Systems retains `webdev/`.
 
-Before launching, replace `https://jenny-site-url-here.invalid` in
-`projects/index.html` with Jenny & The StreetWalkers' final domain or Netlify URL.
+Jenny’s live website: https://resistanceandground.github.io/JennyAndTheStreetWalkers/
+
+YesChef and AfterFall are in development. Example standard deals is an educational placeholder awaiting reviewed content.

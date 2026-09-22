@@ -1,0 +1,123 @@
+/* Loaded only by Web & Systems; shared site styles remain unchanged. */
+.systems-page .page-heading {
+  padding-bottom: 36px;
+}
+.systems-page .page-heading .intro {
+  max-width: 780px;
+}
+.systems-visual {
+  margin: 0;
+  min-width: 0;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+.systems-visual--intro {
+  margin: 0 7% 36px;
+}
+.systems-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.systems-visual--intro .systems-video {
+  aspect-ratio: 16 / 7;
+  max-height: 480px;
+}
+.systems-caption {
+  padding: 13px 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.systems-page .systems-context {
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: 7%;
+  padding-top: 0;
+}
+.systems-context p {
+  margin-top: 0;
+}
+.systems-page .systems-services {
+  padding-bottom: 40px;
+}
+.systems-products {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  grid-template-rows: auto 1fr;
+  column-gap: 7%;
+  margin: 0 7% 70px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+.systems-products-heading {
+  grid-column: 1;
+  grid-row: 1;
+}
+.systems-products-heading .index {
+  margin: 0 0 20px;
+}
+.systems-products-heading h2 {
+  font-size: 42px;
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+  margin: 0 0 20px;
+}
+.systems-visual--support {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: start;
+}
+.systems-products-copy {
+  grid-column: 1;
+  grid-row: 2;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+@media (max-width: 800px) {
+  .systems-page .systems-context,
+  .systems-products {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  .systems-products-heading,
+  .systems-visual--support,
+  .systems-products-copy {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .systems-products-heading h2 {
+    margin-bottom: 0;
+    font-size: 34px;
+  }
+  .systems-visual--intro .systems-video {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Project previews are a subsection of Web & Systems. */
+.selected-projects .web-work h3,
+.selected-projects .project-row h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin: 0 0 20px;
+}
+.selected-projects-link {
+  margin: 0 7% 80px;
+}
+@media (max-width: 650px) {
+  .selected-projects .web-work h3,
+  .selected-projects .project-row h3 {
+    font-size: 36px;
+  }
+}
