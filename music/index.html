@@ -33,11 +33,33 @@
         Menu <span>+</span>
       </button>
       <nav id="main-nav" aria-label="Main navigation">
-        <a href="../production/index.html" aria-current="location">Production</a
-        ><a href="../webdev/index.html">Web &amp; Systems</a
-        ><a href="../about/index.html">About</a
-        ><a href="../contact/index.html">Booking / Contact</a>
-      </nav>
+        <div class="nav-dropdown">
+          <div class="nav-topline">
+            <a class="nav-overview" href="../production/index.html" aria-current="location">Production</a>
+            <button class="nav-submenu-toggle" type="button" aria-label="Toggle Production submenu" aria-expanded="false" aria-controls="production-nav"><span aria-hidden="true">⌄</span></button>
+          </div>
+          <div class="nav-submenu" id="production-nav" hidden>
+            <a href="../production/index.html">Production Overview</a>
+            <a href="../production/index.html#artist-production">Artist Production &amp; Collaboration</a>
+            <a href="../music/index.html">Music</a>
+            <a href="../production/publishing/index.html">Publishing</a>
+            <a href="../production/index.html#media-promotion">Media &amp; Promotion</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <div class="nav-topline">
+            <a class="nav-overview" href="../webdev/index.html">Web &amp; Systems</a>
+            <button class="nav-submenu-toggle" type="button" aria-label="Toggle Web &amp; Systems submenu" aria-expanded="false" aria-controls="systems-nav"><span aria-hidden="true">⌄</span></button>
+          </div>
+          <div class="nav-submenu" id="systems-nav" hidden>
+            <a href="../webdev/index.html">Web &amp; Systems Overview</a>
+            <a href="../webdev/index.html#web-development">Web Development</a>
+            <a href="../webdev/index.html#systems-products">Digital Products &amp; Systems</a>
+            <a href="../webdev/index.html#selected-projects">Selected Projects</a>
+          </div>
+        </div>
+        <a href="../about/index.html">About</a>
+<a class="nav-contact" href="../contact/index.html">Contact</a>      </nav>
     </header>
     <main id="main">
       <div class="page-heading">

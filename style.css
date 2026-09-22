@@ -432,6 +432,8 @@ figure {
   margin: 0;
   line-height: 1.6;
 }
+
+
 .web-work {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -824,12 +826,14 @@ footer small {
 }
 .contact-watermark {
   position: absolute;
-  right: 0%;
-  top: 5%;
-  width: min(520px, 55vw);
-  opacity: 0.055;
+  right: 0;
+  top: 0;
+  width: min(560px, 52vw);
+  opacity: 0.045;
   filter: invert(1);
+  mix-blend-mode: screen;
   pointer-events: none;
+  user-select: none;
 }
 .web-project {
   margin-bottom: 45px;
@@ -1128,6 +1132,102 @@ footer small {
   position: static;
 }
 
+.publishing-page {
+  position: relative;
+  isolation: isolate;
+  .publishing-page::before,
+  .publishing-page::after {
+  content: "";
+  position: absolute;
+
+  top: 115px;
+  right: 8%;
+
+  width: min(420px, 38vw);
+  aspect-ratio: 1;
+
+  border: 1px solid rgba(115, 153, 255, 0.13);
+  border-radius: 50%;
+
+  pointer-events: none;
+  z-index: -1;
+
+  opacity: 0;
+  transform: scale(0.72);
+
+  animation: publishingRipple 6s ease-out infinite;
+}
+
+.publishing-page::after {
+  animation-delay: 3s;
+}
+}
+
+.publishing-watermark {
+  position: absolute;
+  top: 70px;
+  right: 5%;
+  width: min(520px, 46vw);
+  height: auto;
+
+  opacity: 0.07;
+  filter: invert(1);
+  mix-blend-mode: screen;
+
+  pointer-events: none;
+  user-select: none;
+
+  z-index: -1;
+  animation: publishingWatermarkPulse 7s ease-in-out infinite;
+transform-origin: center;
+}
+
+@keyframes publishingRipple {
+  0% {
+    transform: scale(0.72);
+    opacity: 0;
+  }
+
+  18% {
+    opacity: 0.14;
+  }
+
+  100% {
+    transform: scale(1.18);
+    opacity: 0;
+  }
+}
+@keyframes publishingWatermarkPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.055;
+  }
+
+  50% {
+    transform: scale(1.025);
+    opacity: 0.08;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .publishing-watermark,
+  .publishing-page::before,
+  .publishing-page::after {
+    animation: none;
+    top: 115px;
+    right: 8%;
+  }
+}
+@media (max-width: 650px) {
+  .publishing-watermark {
+    top: 90px;
+    right: -5%;
+    width: min(420px, 85vw);
+    
+  }
+}
+
 .publishing-teaser {
   margin: 60px 7%;
   padding: 36px;
@@ -1348,4 +1448,83 @@ footer small {
   width: 100%;
   max-width: 520px;
   justify-self: start;
+}
+
+/* One shared navigation for mouse, keyboard, and touch. */
+header { position: relative; z-index: 10; }
+#main-nav { align-items: center; gap: 28px; }
+.nav-dropdown { position: relative; }
+.nav-topline { display: flex; align-items: center; }
+.nav-submenu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--blue);
+  font: inherit;
+  cursor: pointer;
+}
+.nav-submenu-toggle[aria-expanded="true"] span { transform: rotate(180deg); }
+.nav-submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 280px;
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+}
+.nav-submenu[hidden] { display: none; }
+.nav-submenu a { display: flex; align-items: center; min-height: 44px; padding: 10px 0; }
+.nav-submenu-toggle:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+#main-nav .nav-contact {
+  margin-left: 20px;
+}
+@media (max-width: 950px) and (min-width: 651px) {
+  #main-nav { gap: 8px; font-size: 12px; }
+  .nav-submenu { width: 240px; }
+}
+@media (max-width: 650px) {
+  #main-nav { align-items: stretch; gap: 0; }
+  .nav-topline { width: 100%; }
+  .nav-overview { flex: 1; }
+  .nav-submenu { position: static; width: 100%; margin-bottom: 10px; }
+  .nav-submenu a { font-size: 14px; }
+  .menu-toggle, #main-nav > a, .nav-overview { min-height: 44px; }
+}
+
+/* Faint signals share the watermark's center; content stays above them. */
+.contact-stage::before,
+.contact-stage::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: min(560px, 52vw);
+  aspect-ratio: 1;
+  border: 1px solid var(--blue);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  animation: watermarkRipple 6s linear infinite;
+}
+.contact-stage::after { animation-delay: -3s; }
+@keyframes watermarkRipple {
+  0% { transform: scale(0.72); opacity: 0; }
+  18% { opacity: 0.2; }
+  100% { transform: scale(1.12); opacity: 0; }
+}
+@media (max-width: 650px) {
+  .contact-stage::before,
+  .contact-stage::after { width: min(85vw, 100%); top: auto; bottom: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-stage::before,
+  .contact-stage::after { animation: none; opacity: 0; }
 }

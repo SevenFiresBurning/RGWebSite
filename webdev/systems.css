@@ -121,3 +121,23 @@
     font-size: 36px;
   }
 }
+
+.services-support {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 480px);
+  align-items: center;
+  gap: 7%;
+  margin: 0 7% 70px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+.services-support h2 { font-size: 32px; }
+.services-support p { line-height: 1.75; }
+.services-support .button { margin-top: 16px; }
+.services-support-graphic { margin: 0; min-width: 0; }
+.services-support-graphic img { display: block; width: 100%; height: auto; }
+.services-support-graphic figcaption { margin-top: 12px; font-size: 13px; color: var(--muted); }
+@media (max-width: 750px) {
+  .services-support { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .services-support-graphic { width: 100%; max-width: 480px; justify-self: center; }
+}

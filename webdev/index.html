@@ -35,11 +35,33 @@
         Menu <span>+</span>
       </button>
       <nav id="main-nav" aria-label="Main navigation">
-        <a href="../production/index.html">Production</a
-        ><a href="../webdev/index.html" aria-current="page">Web &amp; Systems</a
-        ><a href="../about/index.html">About</a
-        ><a href="../contact/index.html">Booking / Contact</a>
-      </nav>
+        <div class="nav-dropdown">
+          <div class="nav-topline">
+            <a class="nav-overview" href="../production/index.html">Production</a>
+            <button class="nav-submenu-toggle" type="button" aria-label="Toggle Production submenu" aria-expanded="false" aria-controls="production-nav"><span aria-hidden="true">⌄</span></button>
+          </div>
+          <div class="nav-submenu" id="production-nav" hidden>
+            <a href="../production/index.html">Production Overview</a>
+            <a href="../production/index.html#artist-production">Artist Production &amp; Collaboration</a>
+            <a href="../music/index.html">Music</a>
+            <a href="../production/publishing/index.html">Publishing</a>
+            <a href="../production/index.html#media-promotion">Media &amp; Promotion</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <div class="nav-topline">
+            <a class="nav-overview" href="../webdev/index.html" aria-current="page">Web &amp; Systems</a>
+            <button class="nav-submenu-toggle" type="button" aria-label="Toggle Web &amp; Systems submenu" aria-expanded="false" aria-controls="systems-nav"><span aria-hidden="true">⌄</span></button>
+          </div>
+          <div class="nav-submenu" id="systems-nav" hidden>
+            <a href="../webdev/index.html">Web &amp; Systems Overview</a>
+            <a href="../webdev/index.html#web-development">Web Development</a>
+            <a href="../webdev/index.html#systems-products">Digital Products &amp; Systems</a>
+            <a href="../webdev/index.html#selected-projects">Selected Projects</a>
+          </div>
+        </div>
+        <a href="../about/index.html">About</a>
+<a class="nav-contact" href="../contact/index.html">Contact</a>      </nav>
     </header>
     <main id="main">
       <div class="page-heading">
@@ -80,7 +102,7 @@
           and build something useful.
         </p>
       </section>
-      <section class="service-list systems-services">
+      <section id="web-development" class="service-list systems-services">
         <article>
           <span class="index">01</span>
           <div>
@@ -91,8 +113,21 @@
           </div>
         </article>
       </section>
+      <section class="services-support" aria-labelledby="services-support-heading">
+        <div>
+          <h2 id="services-support-heading">Services &amp; Digital Support</h2>
+          <p>Websites are only part of the system. Resistance &amp; Ground can handle the website itself, ongoing site management, social media and promotional support. Every project is scoped around what the client actually needs.</p>
+          <a class="button" href="../contact/index.html?type=Web%20development">Start a project <span aria-hidden="true">→</span></a>
+        </div>
+        <figure class="services-support-graphic">
+          <a href="../assets/rg-services-pricing.jpg" aria-label="Open the full-size R&amp;G services and pricing image">
+            <img src="../assets/rg-services-pricing.jpg" width="1024" height="1536" loading="lazy" alt="R&amp;G services: websites from $500; website care from $50 per month; social media from $300 per month; promotion from $250; publishing and PR by custom quote. Every project is scoped to your needs." />
+          </a>
+          <figcaption>View the full-size services guide.</figcaption>
+        </figure>
+      </section>
       <section
-        class="systems-products"
+        id="systems-products" class="systems-products"
         aria-labelledby="systems-products-heading"
       >
         <div class="systems-products-heading">
@@ -106,7 +141,7 @@
         </p>
       </section>
       <section
-        class="selected-projects"
+        id="selected-projects" class="selected-projects"
         aria-labelledby="selected-projects-heading"
       >
         <div class="content-section">
