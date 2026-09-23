@@ -4,7 +4,7 @@ Static HTML, CSS and JavaScript. No build step is required.
 
 ## Hosting
 
-Netlify publish directory: `.` (repository root). Production branch: `main`. Mailing-list forms use Netlify Forms. Contact inquiries open a mailto draft.
+Netlify publish directory: `.` (repository root). Production branch: `main`. Contact and mailing-list forms submit to separate Formspree endpoints. Contact inquiries retain a mailto fallback if online submission fails.
 
 ## Navigation
 

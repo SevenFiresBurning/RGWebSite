@@ -89,7 +89,16 @@
               production, publishing, media, websites, or digital systems.
             </p>
           </div>
-          <form id="inquiry-form">
+          <form
+            id="inquiry-form"
+            action="https://formspree.io/f/mjykralg"
+            method="POST"
+          >
+            <input
+              type="hidden"
+              name="subject"
+              value="New Resistance &amp; Ground inquiry"
+            />
             <label for="type">I’m interested in</label
             ><select id="type" name="type">
               <option>Music booking</option>
@@ -102,6 +111,16 @@
               <option>Other inquiry</option></select
             ><label for="name">Your name</label
             ><input id="name" name="name" autocomplete="name" required /><label
+              for="email"
+              >Your email</label
+            ><input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              maxlength="254"
+              required
+            /><label
               for="message"
               >Tell me about your project</label
             ><textarea id="message" name="message" rows="5" required></textarea
@@ -109,10 +128,10 @@
               Send inquiry <span>↗</span>
             </button>
             <p class="form-note">
-              Your email app will open with a prepared message. Nothing is sent
-              automatically.
+              Your inquiry will be sent securely. If online delivery fails,
+              your email app will open with a prepared message.
             </p>
-            <p id="form-status" role="status"></p>
+            <p id="form-status" role="status" aria-live="polite"></p>
           </form>
         </section>
       </section>
@@ -132,18 +151,9 @@
       <form
         name="rg-mailing-list"
         method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
+        action="https://formspree.io/f/mljdnpzl"
       >
-        <input type="hidden" name="form-name" value="rg-mailing-list" />
-        <p hidden>
-          <label
-            >Leave this empty<input
-              name="bot-field"
-              tabindex="-1"
-              autocomplete="off"
-          /></label>
-        </p>
+        <input type="hidden" name="subject" value="New Resistance &amp; Ground mailing-list signup" />
         <label for="mailing-email">Email address</label
         ><input
           id="mailing-email"
