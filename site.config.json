@@ -1,0 +1,156 @@
+{
+  "siteUrl": "https://resistanceandground.com",
+  "pages": [
+    {
+      "file": "index.html",
+      "title": "Resistance & Ground",
+      "description": "Music, media, publishing, and web development for artists and independent projects.",
+      "parent": null
+    },
+    {
+      "file": "music-media/index.html",
+      "title": "Music & Media",
+      "description": "Artist production, collaboration, media, and publishing at Resistance & Ground.",
+      "parent": "index.html"
+    },
+    {
+      "file": "music-media/artists-collaborations/index.html",
+      "title": "Artists & Collaborations",
+      "description": "Artists, music, and creative collaboration at Resistance & Ground.",
+      "parent": "music-media/index.html"
+    },
+    {
+      "file": "music-media/artists-collaborations/music/index.html",
+      "title": "Artists",
+      "description": "Meet Mike’s Wilson in the Artists area of Resistance & Ground, within Music & Media and Artists & Collaborations.",
+      "parent": "music-media/artists-collaborations/index.html"
+    },
+    {
+      "file": "music-media/artists-collaborations/music/mikes-wilson/index.html",
+      "title": "Mike’s Wilson",
+      "description": "Music, recordings, videos, and updates from Mike’s Wilson.",
+      "parent": "music-media/artists-collaborations/music/index.html"
+    },
+    {
+      "file": "music-media/publishing/index.html",
+      "title": "Publishing",
+      "description": "Artist education, creative ownership, and plain-language publishing support from Resistance & Ground.",
+      "parent": "music-media/index.html"
+    },
+    {
+      "file": "web-development/index.html",
+      "title": "Web Development",
+      "description": "Client websites and practical digital tools built around real needs by Resistance & Ground.",
+      "parent": "index.html"
+    },
+    {
+      "file": "web-development/portfolio/index.html",
+      "title": "Portfolio",
+      "description": "Websites and digital projects: YesChef, AfterFall, and Jenny & The StreetWalkers.",
+      "parent": "web-development/index.html"
+    },
+    {
+      "file": "web-development/portfolio/yeschef/index.html",
+      "title": "YesChef",
+      "description": "An in-development restaurant costing and operations tool based on real kitchen workflows.",
+      "parent": "web-development/portfolio/index.html",
+      "image": "assets/YesChefWeb.png"
+    },
+    {
+      "file": "web-development/portfolio/afterfall/index.html",
+      "title": "AfterFall",
+      "description": "An in-development strategy game prototype centered on territory, resources, infrastructure, and diplomacy.",
+      "parent": "web-development/portfolio/index.html",
+      "image": "assets/afterFallLogo.png"
+    },
+    {
+      "file": "web-development/portfolio/jenny-and-the-streetwalkers/index.html",
+      "title": "Jenny & The StreetWalkers",
+      "description": "A live website for a working band, focused on booking, media, show history, and contact.",
+      "parent": "web-development/portfolio/index.html",
+      "image": "assets/jenny-stage.png"
+    },
+    {
+      "file": "resources/index.html",
+      "title": "Resources",
+      "description": "Articles and reference material for artists and independent creators.",
+      "parent": "index.html"
+    },
+    {
+      "file": "resources/articles/index.html",
+      "title": "Articles",
+      "description": "Plain-language articles from Resistance & Ground, beginning with music publishing.",
+      "parent": "resources/index.html"
+    },
+    {
+      "file": "resources/what-is-music-publishing/index.html",
+      "title": "What Is Music Publishing?",
+      "description": "Understand the song, the recording, publishing administration, and questions about ownership and control.",
+      "parent": "resources/articles/index.html",
+      "image": "assets/Swilson.JPEG"
+    },
+    {
+      "file": "resources/reference/index.html",
+      "title": "Reference",
+      "description": "Official resources for music copyright, performance royalties, mechanical licensing, and recording rights.",
+      "parent": "resources/index.html"
+    },
+    {
+      "file": "about/index.html",
+      "title": "About",
+      "description": "Meet Mike Wilson and the work behind Resistance & Ground.",
+      "parent": "index.html"
+    },
+    {
+      "file": "contact/index.html",
+      "title": "Contact",
+      "description": "Contact Resistance & Ground about bookings, creative collaborations, publishing, or web development.",
+      "parent": "index.html"
+    }
+  ],
+  "navigation": [
+    "music-media/index.html",
+    "web-development/index.html",
+    "resources/index.html",
+    "about/index.html",
+    "contact/index.html"
+  ],
+  "redirects": {
+    "production/index.html": "music-media/index.html",
+    "production/publishing/artists/index.html": "music-media/artists-collaborations/index.html",
+    "music/index.html": "music-media/artists-collaborations/music/index.html",
+    "music/mikes-wilson/index.html": "music-media/artists-collaborations/music/mikes-wilson/index.html",
+    "production/publishing/index.html": "music-media/publishing/index.html",
+    "webdev/index.html": "web-development/index.html",
+    "projects/index.html": "web-development/portfolio/index.html",
+    "production/music-publishing.html": "resources/what-is-music-publishing/index.html",
+    "production/publishing/example-deals.html": "music-media/publishing/index.html"
+  },
+  "images": {
+    "assets/rg-social-card.png": {
+      "width": 1200,
+      "height": 630,
+      "alt": "Resistance & Ground"
+    },
+    "assets/Swilson.JPEG": {
+      "width": 1536,
+      "height": 2048,
+      "alt": "Black-and-white portrait of a man wearing glasses and a white shirt"
+    },
+    "assets/YesChefWeb.png": {
+      "width": 1672,
+      "height": 940,
+      "alt": "YesChef Kitchen Intelligence artwork with fresh ingredients in a professional kitchen"
+    },
+    "assets/afterFallLogo.png": {
+      "width": 2172,
+      "height": 724,
+      "alt": "AfterFall title artwork formed from ruined structures with perched ravens"
+    },
+    "assets/jenny-stage.png": {
+      "width": 1672,
+      "height": 941,
+      "alt": "Amber and burgundy lighting on a brick stage"
+    }
+  }
+}
