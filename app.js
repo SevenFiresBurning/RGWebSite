@@ -1,6 +1,7 @@
+document.documentElement.classList.add('nav-enhanced');
 const menu = document.querySelector('.menu-toggle');
 const nav = document.querySelector('#main-nav');
-const mobileNav = matchMedia('(max-width: 650px)');
+const mobileNav = matchMedia('(max-width: 950px)');
 const dropdowns = [...document.querySelectorAll('.nav-dropdown')];
 function setSubmenu(dropdown, open) {
   dropdown.querySelector('.nav-submenu-toggle').setAttribute('aria-expanded', String(open));

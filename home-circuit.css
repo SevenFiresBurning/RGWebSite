@@ -1,0 +1,71 @@
+/* Homepage circuitry follows the actual link positions, including stacked routes. */
+:root { --home-signal: #c6d5ff; }
+.rg-circuit-mark .circuit-signal,
+.page-component-line .circuit-signal,
+.route-wire .circuit-signal {
+  stroke: var(--home-signal); stroke-width: 2; stroke-linecap: round;
+  stroke-dasharray: 8 100; stroke-dashoffset: 8; opacity: 0;
+  pointer-events: none;
+}
+.rg-circuit-mark .circuit-signal, .page-component-line .circuit-signal { animation: homeCircuitSignal 5s linear infinite; }
+.circuit-ground { fill: none; stroke: var(--home-signal); stroke-width: 2; opacity: 0; }
+.rg-circuit-mark .circuit-ground, .page-component-line .circuit-ground { animation: homeGroundSignal 5s linear infinite; }
+.page-component-line { margin: 30px 7% 40px; pointer-events: none; }
+.page-component-line svg { display: block; width: 100%; height: 40px; fill: none; }
+.page-component-line .circuit-trace { stroke: var(--control-border); stroke-width: 1.4; }
+.page-component-line path { vector-effect: non-scaling-stroke; }
+.page-component-line--end { margin-top: 48px; margin-bottom: 60px; }
+@keyframes homeGroundSignal {
+  0%, 88% { opacity: 0; }
+  95% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes homeCircuitSignal {
+  0% { stroke-dashoffset: 8; opacity: 0; }
+  5% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { stroke-dashoffset: -100; opacity: 0; }
+}
+.route-list { position: relative; isolation: isolate; }
+.route-list article { display: flex; flex-direction: column; padding-bottom: 40px; }
+.route-link {
+  position: relative; z-index: 1; display: flex; flex-direction: column;
+  align-items: flex-start; align-self: flex-start; gap: 9px;
+  margin-top: auto; padding: 10px 0 0; max-width: 100%;
+  min-height: 66px; font-size: 14px; line-height: 1.5;
+}
+.route-label { text-decoration: underline; text-underline-offset: 5px; }
+.route-switch { display: block; width: 52px; height: 24px; margin-left: 56px; overflow: visible; color: var(--control-border); }
+.route-switch path, .route-switch circle { fill: none; stroke: currentColor; stroke-width: 1.5; }
+.route-switch circle { fill: var(--paper); }
+.route-switch .switch-blade { transform-origin: 8px 12px; transform: rotate(-28deg); transition: transform .35s ease, stroke .35s ease; }
+.route-link:is(:hover, :focus-visible, :active) { color: var(--blue); }
+.route-link:is(:hover, :focus-visible, :active) .route-switch { color: var(--home-signal); }
+.route-link:is(:hover, :focus-visible, :active) .switch-blade { transform: rotate(0); }
+.route-link:focus-visible { outline: 3px solid var(--blue); outline-offset: 6px; }
+.route-link:active .route-label { text-decoration-thickness: 2px; }
+.route-wire { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; overflow: visible; pointer-events: none; }
+.route-wire .circuit-trace { fill: none; stroke: var(--control-border); stroke-width: 1.4; }
+.route-wire .circuit-signal { fill: none; }
+.route-list.is-signaling .route-wire .circuit-signal { animation: homeCircuitSignal 5s linear both; }
+.route-list.is-signaling .route-wire .circuit-ground { animation: homeGroundSignal 5s linear both; }
+@media (max-width: 850px) {
+  .route-list article { padding-left: 28px; padding-bottom: 28px; }
+  .route-switch { margin-left: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rg-circuit-mark .circuit-signal,
+  .rg-circuit-mark .circuit-ground,
+  .page-component-line .circuit-signal,
+  .page-component-line .circuit-ground,
+  .route-list.is-signaling .route-wire .circuit-signal,
+  .route-list.is-signaling .route-wire .circuit-ground { animation: none; }
+  .route-switch .switch-blade { transition: none; }
+  .route-list:has(.route-link:is(:hover, :focus-visible, :active)) .circuit-signal {
+    stroke-dasharray: none; stroke-dashoffset: 0; opacity: .8;
+  }
+  .route-list:has(.route-link:is(:hover, :focus-visible, :active)) .circuit-ground { opacity: .8; }
+}
+@media (forced-colors: active) {
+  .route-wire .circuit-trace, .route-switch { stroke: CanvasText; color: LinkText; }
+}

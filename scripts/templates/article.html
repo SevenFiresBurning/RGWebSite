@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0d0f12" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20rx%3D%2220%22%20fill%3D%22%231552ed%22%2F%3E%3Cpath%20d%3D%22M20%206v17M7%2023h26M11%2028h18M16%2033h8%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E"
+    />
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../../mailing-list.css" />
+    <link rel="stylesheet" href="../resources.css" />
+  <!-- rg:metadata --><!-- /rg:metadata -->
+<link rel="stylesheet" href="../../rgv4.css" />
+</head>
+  <body class="dark">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header"></header>
+    <main id="main">
+<!-- rg:breadcrumbs --><!-- /rg:breadcrumbs -->
+<!-- rg:article -->
+</main>
+    <section class="mailing-signup" aria-labelledby="mailing-heading">
+      <div>
+        <h2 id="mailing-heading">Stay in the loop</h2>
+        <p>Music, new projects and updates from R&amp;G.</p>
+        <p>
+          Your email is used for Resistance &amp; Ground updates. To leave the
+          list,
+          <a href="mailto:resistanceandground@gmail.com?subject=Unsubscribe"
+            >request removal</a
+          >.
+        </p>
+      </div>
+      <form
+        name="rg-mailing-list"
+        method="POST"
+        action="https://formspree.io/f/mljdnpzl"
+      >
+        <input type="hidden" name="subject" value="New Resistance &amp; Ground mailing-list signup" />
+        <label for="mailing-email">Email address</label
+        ><input
+          id="mailing-email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          required
+          maxlength="254"
+        /><label class="mailing-consent"
+          ><input
+            type="checkbox"
+            name="consent"
+            value="Yes, send me email updates"
+            required
+          /><span
+            >Send me email updates from Resistance &amp; Ground.</span
+          ></label
+        ><button type="submit">Join the mailing list</button>
+        <p role="status" aria-live="polite" aria-atomic="true"></p>
+      </form>
+    </section>
+    <footer>
+      <a class="footer-name" href="../../index.html">Resistance & Ground</a
+      ><span>Music &amp; Media. Publishing. Web Development.</span
+      ><a href="../../contact/index.html">Get in touch ↗</a
+      ><small>© 2026 Resistance & Ground</small>
+    </footer>
+    <script src="../../app.js" defer></script>
+    <script src="../../mailing-list.js" defer></script>
+  </body>
+</html>

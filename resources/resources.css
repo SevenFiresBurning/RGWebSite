@@ -1,0 +1,44 @@
+/* Editorial resources use the existing type, colors, and page margins. */
+.home-feature,
+.resource-feature {
+  margin: 0 7% 60px;
+  padding: 36px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 6%;
+  align-items: center;
+}
+.home-feature h2,
+.resource-feature h2 { font-size: clamp(28px, 3.2vw, 44px); margin: 12px 0 20px; }
+.home-feature p,
+.resource-feature p { line-height: 1.7; }
+.home-feature .button,
+.resource-feature .button { margin-top: 12px; }
+.feature-image { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; max-height: 360px; object-fit: cover; object-position: 50% 68%; }
+.resource-visual { width: min(900px, 86%); margin: 0 auto 48px; }
+.resource-visual img { display: block; width: 100%; aspect-ratio: 16 / 10; max-height: 560px; object-fit: cover; object-position: 50% 68%; height: auto; }
+.resource-copy { width: min(760px, 86%); margin: 0 auto 80px; line-height: 1.8; }
+.resource-copy h2 { font-size: clamp(25px, 3vw, 32px); margin-top: 44px; }
+.resource-copy a { text-decoration: underline; text-underline-offset: 3px; }
+.resource-copy li { margin-bottom: 12px; }
+.resource-copy { overflow-wrap: anywhere; }
+.resource-copy .availability-note { font-size: 14px; color: var(--muted); }
+.resource-visual img:not([src$="Swilson.JPEG"]) { aspect-ratio: auto; object-fit: contain; max-height: none; }
+.article-list { margin: 0 7% 80px; }
+.article-card { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 6%; padding-block: 36px; border-top: 1px solid var(--line); align-items: center; }
+.article-card img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; }
+.article-card img[src$="Swilson.JPEG"] { object-fit: cover; object-position: 50% 68%; }
+.article-card h2 { font-size: clamp(26px, 3vw, 38px); margin: 12px 0 20px; }
+.article-card h2 a:hover { color: var(--blue); }
+.article-card p { line-height: 1.75; }
+.related-reading { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 12px; }
+.related-reading ul { padding-left: 20px; }
+.related-reading .button { text-decoration: none; }
+.resource-scope { margin: 0 7% 70px; max-width: 760px; line-height: 1.75; }
+@media (max-width: 650px) {
+  .home-feature,
+  .resource-feature { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .article-card { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+}

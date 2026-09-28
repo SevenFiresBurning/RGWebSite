@@ -38,14 +38,6 @@ textarea:focus-visible {
   outline: 3px solid var(--blue);
   outline-offset: 5px;
 }
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 27px 5%;
-  border-bottom: 1px solid var(--line);
-  gap: 30px;
-}
 .brand {
   display: flex;
   align-items: center;
@@ -61,23 +53,6 @@ header {
   font-size: 44px;
   font-weight: 400;
   color: var(--blue);
-}
-nav {
-  display: flex;
-  gap: 30px;
-  font-size: 14px;
-}
-nav a {
-  padding-block: 8px;
-  border-bottom: 2px solid transparent;
-}
-nav a:hover,
-nav a[aria-current] {
-  border-color: var(--blue);
-  color: var(--blue);
-}
-.menu-toggle {
-  display: none;
 }
 main {
   min-height: 65vh;
@@ -196,33 +171,10 @@ h1 {
   width: 33%;
   background: var(--blue);
 }
-.directory {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin: 0 5% 75px;
-  border: 1px solid var(--line);
-  gap: 1px;
-  background: var(--line);
-}
-.directory a {
-  position: relative;
-  min-height: 185px;
-  padding: 27px 20px;
-  background: var(--paper);
-  transition: background 0.2s;
-}
-.directory a:hover {
-  background: #1c2537;
-}
 .index {
   font-family: "Space Grotesk", sans-serif;
   font-size: 12px;
   color: var(--muted);
-}
-.directory h2 {
-  font-size: 21px;
-  letter-spacing: -0.6px;
-  margin: 25px 0 13px;
 }
 .direction {
   position: absolute;
@@ -230,12 +182,6 @@ h1 {
   top: 24px;
   color: var(--blue);
   font-size: 24px;
-}
-.directory p {
-  font-size: 13px;
-  line-height: 1.5;
-  color: var(--muted);
-  margin: 0;
 }
 .page-heading {
   padding: 70px 7% 55px;
@@ -280,23 +226,6 @@ h1 {
 .artist-link .eyebrow {
   color: #fff;
 }
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  border: 1px solid var(--blue);
-  padding: 16px 23px;
-  background: var(--blue);
-  color: #fff;
-  font-weight: 500;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.button:hover {
-  background: #1742b9;
-}
 .plain-link {
   font-size: 14px;
   border-bottom: 1px solid var(--line);
@@ -309,11 +238,6 @@ h1 {
   --muted: #acb0b8;
   --line: #393d44;
   --blue: #7399ff;
-}
-.dark .button {
-  background: #2258ed;
-  border-color: #2258ed;
-  color: white;
 }
 .artist-top {
   padding: 35px 7% 0;
@@ -585,17 +509,10 @@ footer small {
   }
 }
 @media (max-width: 950px) {
-  nav {
-    gap: 17px;
-    font-size: 13px;
-  }
-  .home-hero {
+    .home-hero {
     gap: 30px;
   }
-  .directory {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .artist-hero {
+    .artist-hero {
     grid-template-columns: 1fr;
   }
   .artist-hero img {
@@ -630,39 +547,7 @@ footer small {
   .artist-link {
     min-height: 600px;
   }
-  header {
-    padding: 20px 6%;
-    flex-wrap: wrap;
-  }
-  .menu-toggle {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    align-items: center;
-    border: 0;
-    background: none;
-    color: inherit;
-    font-size: 14px;
-    padding: 10px;
-  }
-  .menu-toggle span {
-    color: var(--blue);
-    font-size: 24px;
-  }
-  nav {
-    display: none;
-    flex-basis: 100%;
-    flex-direction: column;
-    gap: 0;
-  }
-  nav.open {
-    display: flex;
-  }
-  nav a {
-    padding: 14px 0;
-    font-size: 16px;
-  }
-  .home-hero {
+              .home-hero {
     padding: 50px 7% 40px;
     grid-template-columns: 1fr;
     gap: 20px;
@@ -682,28 +567,7 @@ footer small {
   .ground-rule {
     margin-top: 0;
   }
-  .directory {
-    grid-template-columns: 1fr;
-  }
-  .directory a {
-    min-height: 115px;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 30px 1fr;
-    gap: 8px;
-    border-left: 1px solid var(--line);
-  }
-  .directory h2 {
-    margin: 0;
-    font-size: 24px;
-  }
-  .directory p {
-    grid-column: 2;
-  }
-  .directory .index {
-    padding-top: 6px;
-  }
-  .page-heading {
+            .page-heading {
     padding: 45px 7% 35px;
   }
   .page-heading h1 {
@@ -1322,10 +1186,7 @@ transform-origin: center;
   .service-list h2 {
     overflow-wrap: break-word;
   }
-  .button {
-    gap: 16px;
   }
-}
 
 /* Keep the homepage Venmo link box unchanged; enlarge only its artwork. */
 .home-hero .social-links a.social-icon img.home-venmo-icon {
@@ -1451,53 +1312,10 @@ transform-origin: center;
 }
 
 /* One shared navigation for mouse, keyboard, and touch. */
-header { position: relative; z-index: 10; }
-#main-nav { align-items: center; gap: 28px; }
-.nav-dropdown { position: relative; }
-.nav-topline { display: flex; align-items: center; }
-.nav-submenu-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: var(--blue);
-  font: inherit;
-  cursor: pointer;
-}
-.nav-submenu-toggle[aria-expanded="true"] span { transform: rotate(180deg); }
-.nav-submenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 280px;
-  padding: 6px 14px;
-  border: 1px solid var(--line);
-  background: var(--paper);
-  display: flex;
-  flex-direction: column;
-}
-.nav-submenu[hidden] { display: none; }
-.nav-submenu a { display: flex; align-items: center; min-height: 44px; padding: 10px 0; }
-.nav-submenu-toggle:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
-#main-nav .nav-contact {
-  margin-left: 20px;
-}
 @media (max-width: 950px) and (min-width: 651px) {
-  #main-nav { gap: 8px; font-size: 12px; }
-  .nav-submenu { width: 240px; }
-}
+    }
 @media (max-width: 650px) {
-  #main-nav { align-items: stretch; gap: 0; }
-  .nav-topline { width: 100%; }
-  .nav-overview { flex: 1; }
-  .nav-submenu { position: static; width: 100%; margin-bottom: 10px; }
-  .nav-submenu a { font-size: 14px; }
-  .menu-toggle, #main-nav > a, .nav-overview { min-height: 44px; }
-}
+            }
 
 /* Faint signals share the watermark's center; content stays above them. */
 .contact-stage::before,
