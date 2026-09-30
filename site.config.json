@@ -20,16 +20,10 @@
       "parent": "music-media/index.html"
     },
     {
-      "file": "music-media/artists-collaborations/music/index.html",
-      "title": "Artists",
-      "description": "Meet Mike’s Wilson in the Artists area of Resistance & Ground, within Music & Media and Artists & Collaborations.",
-      "parent": "music-media/artists-collaborations/index.html"
-    },
-    {
       "file": "music-media/artists-collaborations/music/mikes-wilson/index.html",
       "title": "Mike’s Wilson",
       "description": "Music, recordings, videos, and updates from Mike’s Wilson.",
-      "parent": "music-media/artists-collaborations/music/index.html"
+      "parent": "music-media/artists-collaborations/index.html"
     },
     {
       "file": "music-media/publishing/index.html",
@@ -143,7 +137,8 @@
   "redirects": {
     "production/index.html": "music-media/index.html",
     "production/publishing/artists/index.html": "music-media/artists-collaborations/index.html",
-    "music/index.html": "music-media/artists-collaborations/music/index.html",
+    "music/index.html": "music-media/artists-collaborations/index.html",
+    "music-media/artists-collaborations/music/index.html": "music-media/artists-collaborations/index.html",
     "music/mikes-wilson/index.html": "music-media/artists-collaborations/music/mikes-wilson/index.html",
     "production/publishing/index.html": "music-media/publishing/index.html",
     "webdev/index.html": "web-development/index.html",

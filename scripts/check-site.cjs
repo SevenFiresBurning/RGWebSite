@@ -18,5 +18,22 @@ for(const page of config.pages.filter(p=>p.article)){
  // Original authoring documents may be retained locally rather than published with the site.
  if(page.article.source&&fs.existsSync(root+'/'+page.article.source))existsExact(page.article.source);
 }
-for(const [from,to]of Object.entries(config.redirects)){assert(!config.redirects[to],'Redirect chain '+from);assert(config.pages.some(p=>p.file===to),'Missing redirect target')}
+for(const [from,to]of Object.entries(config.redirects)){
+ assert(!config.redirects[to],'Redirect chain '+from);assert(config.pages.some(p=>p.file===to),'Missing redirect target');
+ const fallback=read(from),canonical=config.siteUrl+'/'+to.replace(/index\.html$/,'');
+ assert(fallback.includes(`rel="canonical" href="${canonical}"`),'Legacy canonical drift '+from);
+ assert(fallback.includes('noindex,follow'),'Legacy page must not compete in search '+from);
+ const target=fallback.match(/id="legacy-destination" href="([^"]+)"/);
+ assert(target&&new URL(target[1],'https://local/'+from).pathname==='/'+to,'Legacy fallback target drift '+from);
+}
+for(const page of config.pages){
+ for(const [,href]of read(page.file).matchAll(/href="([^"]+)"/g)){
+  if(/^(https?:|mailto:|data:)/.test(href))continue;
+  let target=new URL(href,'https://local/'+page.file).pathname.slice(1);if(target.endsWith('/'))target+='index.html';
+  assert(!config.redirects[target],'Public link points to obsolete route '+page.file+' '+href);
+ }
+ assert(!read(page.file).includes(' Overview</a>'),'Redundant overview link '+page.file);
+}
+for(const rule of read('_redirects').trim().split(/\r?\n/))assert(/^\S+ \S+ 301$/.test(rule),'Invalid Cloudflare redirect '+rule);
+assert(read('contact/index.html').includes('action="https://formspree.io/f/mjykralg"'),'Contact endpoint drift');
 console.log(`PASS: ${config.pages.length} canonical pages, ${Object.keys(config.redirects).length} legacy pages, case-sensitive paths, fragments, metadata, labels, forms, and JS syntax.`);

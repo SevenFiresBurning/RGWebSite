@@ -6,7 +6,6 @@ const dropdowns = [...document.querySelectorAll('.nav-dropdown')];
 function setSubmenu(dropdown, open) {
   dropdown.querySelector('.nav-submenu-toggle').setAttribute('aria-expanded', String(open));
   dropdown.querySelector('.nav-submenu').hidden = !open;
-  if (mobileNav.matches) dropdown.querySelector('.nav-overview').setAttribute('aria-expanded', String(open));
 }
 function closeSubmenus() { dropdowns.forEach(d => setSubmenu(d, false)); }
 function openSubmenu(dropdown) {
@@ -31,9 +30,6 @@ dropdowns.forEach(dropdown => {
     if (open) openSubmenu(dropdown); else setSubmenu(dropdown, false);
   };
   toggle.addEventListener('click', toggleSubmenu);
-  overview.addEventListener('click', event => {
-    if (mobileNav.matches) { event.preventDefault(); toggleSubmenu(); }
-  });
   dropdown.addEventListener('pointerenter', event => {
     if (!mobileNav.matches && event.pointerType !== 'touch') openSubmenu(dropdown);
   });
@@ -45,9 +41,6 @@ dropdowns.forEach(dropdown => {
     if (!mobileNav.matches && !dropdown.contains(event.relatedTarget)) setSubmenu(dropdown, false);
   });
   dropdown.addEventListener('keydown', event => {
-    if (mobileNav.matches && event.target === overview && event.key === ' ') {
-      event.preventDefault(); toggleSubmenu();
-    }
     if (event.key === 'ArrowDown' && event.target.closest('.nav-topline')) {
       event.preventDefault(); openSubmenu(dropdown); dropdown.querySelector('.nav-submenu a').focus();
     }
@@ -68,18 +61,6 @@ nav?.addEventListener('click', event => {
 });
 function syncNavigationMode() {
   closeNavigation();
-  dropdowns.forEach(dropdown => {
-    const overview = dropdown.querySelector('.nav-overview');
-    if (mobileNav.matches) {
-      overview.setAttribute('role', 'button');
-      overview.setAttribute('aria-expanded', 'false');
-      overview.setAttribute('aria-controls', dropdown.querySelector('.nav-submenu').id);
-    } else {
-      overview.removeAttribute('role');
-      overview.removeAttribute('aria-expanded');
-      overview.removeAttribute('aria-controls');
-    }
-  });
 }
 syncNavigationMode();
 mobileNav.addEventListener('change', syncNavigationMode);

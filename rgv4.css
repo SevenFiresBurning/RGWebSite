@@ -175,10 +175,6 @@ img[src$="Swilson.JPEG"] {
 .evidence-grid img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; margin-bottom: 24px; }
 .evidence-grid .evidence-artist { object-position: 23% 45%; }
 .evidence-grid .eyebrow { font-size: 10px; line-height: 1.7; }
-.proof-inline { display: grid; grid-template-columns: minmax(0, .65fr) minmax(0, 1fr); align-items: center; gap: 36px; margin: 0 7% 72px; max-width: 1050px; padding-block: 28px; border-block: 1px solid var(--line); }
-.proof-inline img { width: 100%; height: auto; }
-.proof-inline h2 { font-size: clamp(25px, 3vw, 36px); margin-block: 10px 16px; }
-.proof-inline p { line-height: 1.75; }
 .reading-links { list-style: none; padding: 0; }
 .resource-new { margin: 0 7% 48px; padding-left: 24px; border-left: 1px solid var(--control-border); }
 .afterfall-component { position: relative; border-top-color: #829181; }
@@ -199,8 +195,8 @@ img[src$="Swilson.JPEG"] {
   .evidence-grid .eyebrow { margin-top: 0; }
 }
 @media (max-width: 550px) {
-  .proof-inline, .evidence-grid article { display: block; }
-  .proof-inline img, .evidence-grid img { margin-bottom: 24px; }
+  .evidence-grid article { display: block; }
+  .evidence-grid img { margin-bottom: 24px; }
   .visitor-routing, .work-evidence { margin-bottom: 60px; }
 }
 @media (forced-colors: active) {
@@ -213,10 +209,15 @@ img[src$="Swilson.JPEG"] {
 .collaborations-stage::before {
   content: ""; position: absolute; inset: 0 0 0 auto; width: min(76%, 1000px); z-index: -1; pointer-events: none;
   background: url("assets/music-rehearsal.jpg") center 64% / cover no-repeat;
-  opacity: .12; filter: grayscale(1);
+  opacity: .16; filter: grayscale(1);
   mask-image: linear-gradient(90deg, transparent, #000 65%), linear-gradient(transparent, #000 20%, #000 80%, transparent);
   mask-composite: intersect;
 }
 @media (max-width: 850px) {
-  .collaborations-stage::before { width: 100%; background-position: 60% 64%; opacity: .09; }
+  .collaborations-stage::before { width: 100%; background-position: 60% 64%; opacity: .12; }
 }
+.artist-roster { margin: 0 7% 60px; }
+.artist-roster > h2 { font-size: 32px; }
+.artist-roster .portfolio-item { margin: 0; }
+.artist-roster img { display: block; width: 100%; height: auto; }
+.contact-strip .artist-actions { margin-top: 0; flex-wrap: wrap; }

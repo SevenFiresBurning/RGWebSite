@@ -14,7 +14,7 @@ function header(page){const chain=ancestors(page).map(p=>p.file);
   <a class="brand" href="${relative(page.file,'index.html')}" aria-label="Resistance and Ground home"><span class="brand-mark" aria-hidden="true">⏚</span><span>RESISTANCE<br />&amp; GROUND</span></a>
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">+</span></button>
   <nav id="main-nav" aria-label="Main navigation">
-${config.navigation.map((f,i)=>{const p=byFile.get(f),kids=config.pages.some(c=>c.parent===f);if(!kids)return link(f,p.title,f==='contact/index.html'?'nav-contact':'');return `<div class="nav-dropdown"><div class="nav-topline">${link(f,p.title,'nav-overview')}<button class="nav-submenu-toggle" type="button" aria-label="Toggle ${esc(p.title)} submenu" aria-expanded="false" aria-controls="nav-section-${i}"><span aria-hidden="true">⌄</span></button></div><div class="nav-submenu" id="nav-section-${i}"><ul><li>${link(f,p.title+' Overview')}</li>${children(f)}</ul></div></div>`}).join('\n')}
+${config.navigation.map((f,i)=>{const p=byFile.get(f),kids=config.pages.some(c=>c.parent===f);if(!kids)return link(f,p.title,f==='contact/index.html'?'nav-contact':'');return `<div class="nav-dropdown"><div class="nav-topline">${link(f,p.title,'nav-overview')}<button class="nav-submenu-toggle" type="button" aria-label="Toggle ${esc(p.title)} submenu" aria-expanded="false" aria-controls="nav-section-${i}"><span aria-hidden="true">⌄</span></button></div><div class="nav-submenu" id="nav-section-${i}"><ul>${children(f)}</ul></div></div>`}).join('\n')}
   </nav>
 </header>`}
 function metadata(p){const image=p.image||'assets/rg-social-card.png',imageInfo=config.images[image],isArticle=Boolean(p.article);const entity={'@context':'https://schema.org','@type':isArticle?'Article':'WebPage',name:p.title,description:p.description,url:url(p.file),isPartOf:{'@type':'WebSite',name:'Resistance & Ground',url:config.siteUrl+'/'}};if(isArticle)Object.assign(entity,{headline:p.title,mainEntityOfPage:url(p.file),image:config.siteUrl+'/'+image,author:{'@type':'Organization',name:'Resistance & Ground',url:config.siteUrl+'/'},publisher:{'@type':'Organization',name:'Resistance & Ground',url:config.siteUrl+'/'}});
@@ -58,7 +58,7 @@ if(p.file!=='index.html'){
 }
 output(p.file,s)}
 const rules=[];
-for(const[from,to]of Object.entries(config.redirects)){const dest='/'+to.replace(/index\.html$/,'');for(const old of from.endsWith('/index.html')?['/'+from,'/'+from.replace(/index\.html$/,''),'/'+from.replace(/\/index\.html$/,'')]:['/'+from])rules.push(`${old} ${dest} 301!`)}
+for(const[from,to]of Object.entries(config.redirects)){const dest='/'+to.replace(/index\.html$/,'');for(const old of from.endsWith('/index.html')?['/'+from,'/'+from.replace(/index\.html$/,''),'/'+from.replace(/\/index\.html$/,'')]:['/'+from])rules.push(`${old} ${dest} 301`)}
 output('_redirects',rules.join('\n')+'\n');
 output('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+config.pages.map(p=>`  <url><loc>${esc(url(p.file))}</loc></url>`).join('\n')+'\n</urlset>\n');
 if(stale.length){console.error('Generated files are stale:',stale.join(', '));process.exitCode=1}else console.log(check?'Shared navigation, metadata, redirects and sitemap are current.':'Shared site files generated.');
