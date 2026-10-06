@@ -20,7 +20,7 @@ ${config.navigation.map((f,i)=>{const p=byFile.get(f),kids=config.pages.some(c=>
 function metadata(p){const image=p.image||'assets/rg-social-card.png',imageInfo=config.images[image],isArticle=Boolean(p.article);const entity={'@context':'https://schema.org','@type':isArticle?'Article':'WebPage',name:p.title,description:p.description,url:url(p.file),isPartOf:{'@type':'WebSite',name:'Resistance & Ground',url:config.siteUrl+'/'}};if(isArticle)Object.assign(entity,{headline:p.title,mainEntityOfPage:url(p.file),image:config.siteUrl+'/'+image,author:{'@type':'Organization',name:'Resistance & Ground',url:config.siteUrl+'/'},publisher:{'@type':'Organization',name:'Resistance & Ground',url:config.siteUrl+'/'}});
  const crumb={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:ancestors(p).map((a,i)=>({'@type':'ListItem',position:i+1,name:a.file==='index.html'?'Home':a.title,item:url(a.file)}))};
  return `<!-- rg:metadata -->
-<title>${esc(p.file==='index.html'?'Resistance & Ground — Music, Media & Web Development':p.title+' — Resistance & Ground')}</title>
+<title>${esc(p.file==='index.html'?'Resistance & Ground — Web & Systems, Music & Media, Publishing & Artist Services':p.title+' — Resistance & Ground')}</title>
 <meta name="description" content="${esc(p.description)}" />
 <link rel="canonical" href="${url(p.file)}" />
 <meta property="og:type" content="${isArticle?'article':'website'}" />

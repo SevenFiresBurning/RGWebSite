@@ -4,36 +4,42 @@
     {
       "file": "index.html",
       "title": "Resistance & Ground",
-      "description": "Music, media, publishing, and web development for artists and independent projects.",
+      "description": "Web & Systems, Music & Media, and Publishing & Artist Services for independent projects.",
       "parent": null
     },
     {
       "file": "music-media/index.html",
       "title": "Music & Media",
-      "description": "Artist production, collaboration, media, and publishing at Resistance & Ground.",
+      "description": "Artist production, collaboration, recordings and media at Resistance & Ground.",
       "parent": "index.html"
     },
     {
       "file": "music-media/artists-collaborations/index.html",
-      "title": "Artists & Collaborations",
-      "description": "Artists, music, and creative collaboration at Resistance & Ground.",
-      "parent": "music-media/index.html"
+      "title": "Publishing & Artist Services",
+      "description": "Artist support, publishing rights and administration at Resistance & Ground.",
+      "parent": "index.html"
+    },
+    {
+      "file": "music-media/artists-collaborations/music/index.html",
+      "title": "Artists",
+      "description": "Published artists and collaborators represented by Resistance & Ground.",
+      "parent": "music-media/artists-collaborations/index.html"
     },
     {
       "file": "music-media/artists-collaborations/music/mikes-wilson/index.html",
       "title": "Mike’s Wilson",
       "description": "Music, recordings, videos, and updates from Mike’s Wilson.",
-      "parent": "music-media/artists-collaborations/index.html"
+      "parent": "music-media/artists-collaborations/music/index.html"
     },
     {
       "file": "music-media/publishing/index.html",
       "title": "Publishing",
       "description": "Artist education, creative ownership, and plain-language publishing support from Resistance & Ground.",
-      "parent": "music-media/index.html"
+      "parent": "music-media/artists-collaborations/index.html"
     },
     {
       "file": "web-development/index.html",
-      "title": "Web Development",
+      "title": "Web & Systems",
       "description": "Client websites and practical digital tools built around real needs by Resistance & Ground.",
       "parent": "index.html"
     },
@@ -60,7 +66,7 @@
     {
       "file": "web-development/portfolio/jenny-and-the-streetwalkers/index.html",
       "title": "Jenny & The StreetWalkers",
-      "description": "A live website for a working band, focused on booking, media, show history, and contact.",
+      "description": "A website project for a working band, focused on booking, media, shows, and contact.",
       "parent": "web-development/portfolio/index.html",
       "image": "assets/jenny-stage.png"
     },
@@ -68,7 +74,7 @@
       "file": "resources/index.html",
       "title": "Resources",
       "description": "Articles and reference material for artists and independent creators.",
-      "parent": "index.html"
+      "parent": "music-media/publishing/index.html"
     },
     {
       "file": "resources/articles/index.html",
@@ -128,9 +134,9 @@
     }
   ],
   "navigation": [
-    "music-media/index.html",
     "web-development/index.html",
-    "resources/index.html",
+    "music-media/index.html",
+    "music-media/artists-collaborations/index.html",
     "about/index.html",
     "contact/index.html"
   ],
@@ -138,7 +144,6 @@
     "production/index.html": "music-media/index.html",
     "production/publishing/artists/index.html": "music-media/artists-collaborations/index.html",
     "music/index.html": "music-media/artists-collaborations/index.html",
-    "music-media/artists-collaborations/music/index.html": "music-media/artists-collaborations/index.html",
     "music/mikes-wilson/index.html": "music-media/artists-collaborations/music/mikes-wilson/index.html",
     "production/publishing/index.html": "music-media/publishing/index.html",
     "webdev/index.html": "web-development/index.html",
