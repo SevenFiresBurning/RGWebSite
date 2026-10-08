@@ -59,3 +59,9 @@
   .resource-feature { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .article-card { grid-template-columns: minmax(0, 1fr); gap: 20px; }
 }
+
+.home-feature .feature-title-link { color: inherit; text-decoration: none; }
+.home-feature .feature-title-link:hover { color: var(--blue); }
+.feature-image-link { display: block; }
+.feature-title-link:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+.feature-image-link:focus-visible { outline: 2px solid var(--blue); outline-offset: -3px; }
