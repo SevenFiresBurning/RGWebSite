@@ -47,4 +47,9 @@ assert.deepEqual([...doors.matchAll(/class="route-link" href="([^"]+)"/g)].map(m
 const cards=home.match(/<div class="evidence-grid">([\s\S]*?)<\/div>/)[1];
 assert.deepEqual([...cards.matchAll(/<h3>(.*?)<\/h3>/g)].map(m=>m[1]),['What Is Music Publishing?','Mike’s Wilson','AfterFall'],'Homepage evidence order');
 assert(read('web-development/index.html').includes('id="yeschef-heading"'),'Missing YesChef example');
+const systems=read('web-development/index.html');
+assert(systems.includes('href="marketplace/index.html">Enter Marketplace'),'Missing Marketplace entrance');
+assert(systems.includes('href="arcade/index.html">Enter Arcade'),'Missing Arcade entrance');
+for(const page of config.pages)assert(!/>[^<]*Portfolio[^<]*</.test(read(page.file)),'Obsolete Portfolio label '+page.file);
+assert(read('web-development/marketplace/index.html').includes('aria-label="Visit Website: Jenny &amp; The StreetWalkers"'),'Missing J&S gallery website link');
 console.log(`PASS: ${config.pages.length} canonical pages, ${Object.keys(config.redirects).length} legacy pages, case-sensitive paths, fragments, metadata, labels, forms, and JS syntax.`);

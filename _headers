@@ -9,3 +9,9 @@
 /scripts/templates/*
   X-Robots-Tag: noindex, nofollow
   Content-Type: text/plain; charset=utf-8
+
+/web-development/marketplace/demos/*
+  X-Robots-Tag: noindex, follow
+
+/web-development/arcade/games/*
+  X-Robots-Tag: noindex, follow

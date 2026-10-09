@@ -44,31 +44,40 @@
       "parent": "index.html"
     },
     {
-      "file": "web-development/portfolio/index.html",
-      "title": "Portfolio",
-      "description": "Websites and digital projects: YesChef, AfterFall, and Jenny & The StreetWalkers.",
+      "file": "web-development/marketplace/index.html",
+      "title": "Marketplace",
+      "description": "Website examples from Resistance & Ground: Bright Desk, Apple & Chalk, Jenny & The StreetWalkers, and Frankie’s Franks.",
+      "parent": "web-development/index.html"
+    },
+    {
+      "file": "web-development/arcade/index.html",
+      "title": "Arcade",
+      "description": "Play independent browser games, beginning with HatGame — Hat Rack Rhythm.",
       "parent": "web-development/index.html"
     },
     {
       "file": "web-development/portfolio/yeschef/index.html",
       "title": "YesChef",
       "description": "An in-development restaurant costing and operations tool based on real kitchen workflows.",
-      "parent": "web-development/portfolio/index.html",
-      "image": "assets/YesChefWeb.png"
+      "parent": "web-development/index.html",
+      "image": "assets/YesChefWeb.png",
+      "navigation": false
     },
     {
       "file": "web-development/portfolio/afterfall/index.html",
       "title": "AfterFall",
       "description": "An in-development strategy game prototype centered on territory, resources, infrastructure, and diplomacy.",
-      "parent": "web-development/portfolio/index.html",
-      "image": "assets/afterFallLogo.png"
+      "parent": "web-development/index.html",
+      "image": "assets/afterFallLogo.png",
+      "navigation": false
     },
     {
       "file": "web-development/portfolio/jenny-and-the-streetwalkers/index.html",
       "title": "Jenny & The StreetWalkers",
       "description": "A website project for a working band, focused on booking, media, shows, and contact.",
-      "parent": "web-development/portfolio/index.html",
-      "image": "assets/jenny-stage.png"
+      "parent": "web-development/index.html",
+      "image": "assets/jenny-stage.png",
+      "navigation": false
     },
     {
       "file": "resources/index.html",
@@ -147,9 +156,10 @@
     "music/mikes-wilson/index.html": "music-media/artists-collaborations/music/mikes-wilson/index.html",
     "production/publishing/index.html": "music-media/publishing/index.html",
     "webdev/index.html": "web-development/index.html",
-    "projects/index.html": "web-development/portfolio/index.html",
+    "projects/index.html": "web-development/marketplace/index.html",
     "production/music-publishing.html": "resources/what-is-music-publishing/index.html",
-    "production/publishing/example-deals.html": "music-media/publishing/index.html"
+    "production/publishing/example-deals.html": "music-media/publishing/index.html",
+    "web-development/portfolio/index.html": "web-development/marketplace/index.html"
   },
   "images": {
     "assets/rg-social-card.png": {

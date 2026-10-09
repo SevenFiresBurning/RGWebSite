@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head><meta name="robots" content="noindex,follow" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#121114" />
+    <title>Hat Rack Rhythm</title>
+    <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/web-development/demo-return.css" /><script src="/web-development/demo-return.js" defer></script></head>
+  <body><nav id="rg-demo-return" aria-label="Return to Resistance &amp; Ground"><a href="/web-development/arcade/index.html">← Back to R&amp;G</a><span>Arcade · Esc to return</span></nav>
+    <main class="game-shell">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark">✦</span> HAT RACK RHYTHM</div>
+        <div class="controls">
+          <button id="soundButton" class="icon-button" aria-label="Toggle sound">♫ <span>On</span></button>
+          <button id="pauseButton" class="icon-button" aria-label="Pause game" disabled>Ⅱ <span>Pause</span></button>
+          <button id="restartButton" class="icon-button" aria-label="Restart game">↻ <span>Restart</span></button>
+        </div>
+      </header>
+
+      <section class="stats" aria-label="Game status">
+        <div><span>SCORE</span><strong id="score">00000</strong></div>
+        <div><span>COMBO</span><strong id="combo">×0</strong></div>
+        <div><span>LEVEL</span><strong id="level">1 <em>• 55 BPM</em></strong></div>
+        <div class="web-status"><span>RACK WEBS</span><strong id="rackWebs">0 / 12</strong></div>
+        <div class="timer"><span>TIME</span><strong id="time">0:30</strong><i><b id="timeFill"></b></i></div>
+      </section>
+
+      <section class="stage" aria-label="Hat rack game area">
+        <div class="stage-glow"></div>
+        <div class="count-in" id="countIn" aria-live="polite" aria-atomic="true"></div>
+        <div class="feedback-layer" id="feedbackLayer" aria-live="polite"></div>
+        <div class="debug-hit-area" id="debugHitArea" aria-hidden="true"></div>
+        <aside class="debug-panel" id="debugPanel" aria-live="polite" hidden></aside>
+        <div class="game-message" id="gameMessage" aria-live="polite">
+          <p>Tap the spider when it lands.</p>
+          <button id="startButton">Start the set <span>▶</span></button>
+        </div>
+
+        <div class="rack" id="rack">
+          <div class="rack-base"></div><div class="rack-pole"></div><div class="rack-knob top"></div><div class="rack-knob bottom"></div>
+          <svg class="trail-lines" id="webTrail" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <svg class="cover-webs" id="webCover" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <span class="landing-ring" id="landingRing" aria-hidden="true"></span>
+          <div class="spider" id="spider" aria-hidden="true"><span class="leg one"></span><span class="leg two"></span><span class="leg three"></span><span class="body"></span><span class="eye"></span></div>
+
+          <div class="hat-station station-0" data-hat="0">
+            <span class="rack-arm arm-left"></span><button class="hat" aria-label="Top-left hat"><span class="hook"></span><span class="hat-art fedora"><i></i></span></button>
+            <div class="web" role="button" aria-label="Tap left web for bonus"><span class="web-lines"></span><b>WEB BONUS</b><small>+5</small></div>
+          </div>
+          <div class="hat-station station-1" data-hat="1">
+            <span class="rack-arm arm-right"></span><button class="hat" aria-label="Middle-right hat"><span class="hook"></span><span class="hat-art bowler"><i></i></span></button>
+            <div class="web" role="button" aria-label="Tap middle web for bonus"><span class="web-lines"></span><b>WEB BONUS</b><small>+5</small></div>
+          </div>
+          <div class="hat-station station-2" data-hat="2">
+            <span class="rack-arm arm-left"></span><button class="hat" aria-label="Bottom-left hat"><span class="hook"></span><span class="hat-art cap"><i></i></span></button>
+            <div class="web" role="button" aria-label="Tap right web for bonus"><span class="web-lines"></span><b>WEB BONUS</b><small>+5</small></div>
+          </div>
+          <div class="hat-station station-3 locked" data-hat="3">
+            <span class="rack-arm arm-right"></span><button class="hat" aria-label="Fourth hat" disabled><span class="hook"></span><span class="hat-art top-hat"><i></i></span></button>
+            <div class="web" role="button" aria-label="Tap fourth web for bonus"><span class="web-lines"></span><b>WEB BONUS</b><small>+5</small></div>
+          </div>
+          <div class="hat-station station-4 locked" data-hat="4">
+            <span class="rack-arm arm-left"></span><button class="hat" aria-label="Fifth hat" disabled><span class="hook"></span><span class="hat-art beret"><i></i></span></button>
+            <div class="web" role="button" aria-label="Tap fifth web for bonus"><span class="web-lines"></span><b>WEB BONUS</b><small>+5</small></div>
+          </div>
+          <div class="hat-station station-5 locked" data-hat="5">
+            <span class="rack-arm arm-right"></span><button class="hat" aria-label="Sixth hat" disabled><span class="hook"></span><span class="hat-art bowler sixth-hat"><i></i></span></button>
+            <div class="web" role="button" aria-label="Tap sixth web for bonus"><span class="web-lines"></span><b>WEB BONUS</b><small>+5</small></div>
+          </div>
+        </div>
+      </section>
+      <div class="face-hug hidden" id="faceHug" aria-hidden="true">
+        <div class="face-hug-spider">
+          <span class="leg one"></span><span class="leg two"></span><span class="leg three"></span><span class="body"></span><span class="eye"></span>
+        </div>
+      </div>
+
+      <section class="how-to">
+        <span><b>01</b> Follow the highlighted hat</span><span><b>02</b> Tap on the landing beat</span><span><b>03</b> Tap growing webs for bonus points</span>
+      </section>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>

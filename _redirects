@@ -16,8 +16,11 @@
 /webdev/index.html /web-development/ 301
 /webdev/ /web-development/ 301
 /webdev /web-development/ 301
-/projects/index.html /web-development/portfolio/ 301
-/projects/ /web-development/portfolio/ 301
-/projects /web-development/portfolio/ 301
+/projects/index.html /web-development/marketplace/ 301
+/projects/ /web-development/marketplace/ 301
+/projects /web-development/marketplace/ 301
 /production/music-publishing.html /resources/what-is-music-publishing/ 301
 /production/publishing/example-deals.html /music-media/publishing/ 301
+/web-development/portfolio/index.html /web-development/marketplace/ 301
+/web-development/portfolio/ /web-development/marketplace/ 301
+/web-development/portfolio /web-development/marketplace/ 301

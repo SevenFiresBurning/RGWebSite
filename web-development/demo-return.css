@@ -1,0 +1,18 @@
+#rg-demo-return {
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  background: #0d0f12;
+  border-bottom: 1px solid #444952;
+  color: #f4f2ea;
+  font: 500 14px/1.5 system-ui, sans-serif;
+}
+#rg-demo-return a { color: inherit; text-decoration: none; padding: 2px 4px; }
+#rg-demo-return a:hover { text-decoration: underline; }
+#rg-demo-return a:focus-visible { outline: 2px solid #91a9ff; outline-offset: 2px; }
+#rg-demo-return span { margin-left: auto; padding-left: 12px; color: #c0c4cf; font-size: 12px; }
