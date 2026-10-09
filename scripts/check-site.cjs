@@ -45,7 +45,7 @@ assert.equal(parentOf('resources/index.html'),'music-media/publishing/index.html
 const home=read('index.html'),doors=home.match(/<div class="route-list">([\s\S]*?)<\/div>/)[1];
 assert.deepEqual([...doors.matchAll(/class="route-link" href="([^"]+)"/g)].map(m=>m[1]),config.navigation.slice(0,3),'Homepage service destinations');
 const cards=home.match(/<div class="evidence-grid">([\s\S]*?)<\/div>/)[1];
-assert.deepEqual([...cards.matchAll(/<h3>(.*?)<\/h3>/g)].map(m=>m[1]),['What Is Music Publishing?','Mike’s Wilson','AfterFall'],'Homepage evidence order');
+assert.deepEqual([...cards.matchAll(/<h3>(.*?)<\/h3>/g)].map(m=>m[1]),['What Is Music Publishing?','Mike’s Wilson','Galleries'],'Homepage evidence order');
 assert(read('web-development/index.html').includes('id="yeschef-heading"'),'Missing YesChef example');
 const systems=read('web-development/index.html');
 assert(systems.includes('href="marketplace/index.html">Enter Marketplace'),'Missing Marketplace entrance');

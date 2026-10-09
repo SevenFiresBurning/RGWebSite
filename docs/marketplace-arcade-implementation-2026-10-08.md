@@ -2,6 +2,8 @@
 
 ## Latest refinement (supersedes earlier Portfolio and missing-card notes)
 
+Homepage access: the former AfterFall moving-parts card is now “Galleries,” retaining AfterFall artwork and linking directly to Marketplace and Arcade. Web & Systems gallery entrances now display actual Bright Desk and HatGame preview artwork, with clickable images and entrance buttons. Existing checks pass with the new homepage card order. Browser QA verified the homepage Marketplace destination and both entrance images without broken assets or horizontal overflow. These latest artwork/homepage changes remain local pending a further push request.
+
 ### Demo escape controls
 
 Every local demo HTML page (including Bright Desk subpages) and HatGame now includes a sticky “Back to R&G” bar, outside the demo app root. It returns to Marketplace or Arcade. Escape activates the same destination; Enter/click on the normal link also works. Shared scoped styling and script live in `web-development/demo-return.css` and `web-development/demo-return.js`. Repeat `node scripts/add-demo-return.cjs` after rebuilding/copying demos. The demo checker now requires the return bar on every HTML file and syntax-checks its shared JS. Original source projects remain untouched.
