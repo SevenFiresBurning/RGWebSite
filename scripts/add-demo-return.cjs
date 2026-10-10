@@ -9,8 +9,10 @@ function visit(folder, gallery) {
     if (!file.endsWith('.html')) continue;
     let html = fs.readFileSync(path.join(root, file), 'utf8');
     if (html.includes('id="rg-demo-return"')) continue;
-    html = html.replace('</head>', '<link rel="stylesheet" href="/web-development/demo-return.css" /><script src="/web-development/demo-return.js" defer></script></head>');
-    html = html.replace(/<body\b[^>]*>/, tag => tag + `<nav id="rg-demo-return" aria-label="Return to Resistance &amp; Ground"><a href="/web-development/${gallery}/index.html">← Back to R&amp;G</a><span>${gallery === 'arcade' ? 'Arcade' : 'Marketplace'} · Esc to return</span></nav>`);
+    html = html.replace('</head>', '<link rel="stylesheet" href="/web-development/demo-return.css?v=2" /><script src="/web-development/demo-return.js" defer></script></head>');
+    const pauses = file.includes('/urine-trouble/');
+    if (pauses) html = html.replace('<body>', '<body class="rg-game-with-return">');
+    html = html.replace(/<body\b[^>]*>/, tag => tag + `<nav id="rg-demo-return"${pauses ? ' data-escape="pause"' : ''} aria-label="Return to Resistance &amp; Ground"><a href="/web-development/${gallery}/index.html">← Back to R&amp;G</a><span>${gallery === 'arcade' ? 'Arcade' : 'Marketplace'} · Esc ${pauses ? 'pauses' : 'to return'}</span></nav>`);
     fs.writeFileSync(path.join(root, file), html);
   }
 }

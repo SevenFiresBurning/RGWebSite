@@ -16,3 +16,6 @@
 #rg-demo-return a:hover { text-decoration: underline; }
 #rg-demo-return a:focus-visible { outline: 2px solid #91a9ff; outline-offset: 2px; }
 #rg-demo-return span { margin-left: auto; padding-left: 12px; color: #c0c4cf; font-size: 12px; }
+body.rg-game-with-return { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+body.rg-game-with-return > #rg-demo-return { width: 100%; flex-shrink: 0; }
+body.rg-game-with-return > main { height: calc(100dvh - 44px); min-height: 0; flex: 1; }
