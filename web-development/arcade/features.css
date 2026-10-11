@@ -29,7 +29,9 @@
 /* Games lead the document and the phone layout; side zones share their row. */
 .arcade-layout { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-areas:'games games' 'wall scores'; gap:24px; margin:0 5% 72px; align-items:start; }
 .arcade-layout > * { min-width:0; }
-.arcade-layout .arcade-collection { grid-area:games; margin:0 0 24px; }
+.arcade-layout .arcade-collection { grid-area:games; margin:0 0 24px; width:100%; max-width:100%; min-width:0; }
+.arcade-layout .gallery-card, .arcade-layout .gallery-card > div, .arcade-layout .collection-preview { min-width:0; max-width:100%; }
+.arcade-layout .gallery-card img { width:100%; max-width:100%; min-width:0; height:auto; box-sizing:border-box; }
 .arcade-layout [aria-labelledby="wall-heading"] { grid-area:wall; }
 .arcade-layout [aria-labelledby="scores-heading"] { grid-area:scores; }
 .arcade-layout .arcade-feature { margin:0; padding-top:20px; overflow-wrap:anywhere; }
@@ -56,8 +58,12 @@
   .arcade-layout .arcade-collection { grid-template-columns:minmax(0,1fr); gap:48px; margin:0; }
 }
 @media (max-width:600px) {
-  .arcade-layout { margin-left:16px; margin-right:16px; gap:12px; }
-  .arcade-layout .arcade-collection { grid-template-columns:minmax(0,1fr); }
+  .arcade-layout { width:calc(100% - 32px); max-width:calc(100% - 32px); margin-left:16px; margin-right:16px; gap:12px; }
+  .arcade-layout .arcade-collection { grid-template-columns:minmax(0,1fr); gap:28px; }
+  .arcade-layout .gallery-card { overflow-wrap:anywhere; padding-top:16px; }
+  .arcade-layout .gallery-card h2 { font-size:clamp(24px,7vw,30px); line-height:1.2; margin:16px 0 12px; }
+  .arcade-layout .gallery-card p { font-size:14px; line-height:1.6; }
+  .arcade-layout .collection-preview img { aspect-ratio:16 / 10; margin-bottom:16px; }
   .arcade-layout .arcade-feature h2 { font-size:22px; }
   .arcade-layout .arcade-feature p { font-size:12px; }
   .arcade-layout .score-table { font-size:12px; }
