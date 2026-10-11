@@ -10,7 +10,7 @@
 .score-table tbody tr:nth-child(3) { color: #e6b18f; }
 .venue-wall { padding: clamp(20px,4vw,44px); background: repeating-linear-gradient(3deg,#252723 0 9px,#292b27 10px 12px); border: 8px solid #3c3c36; }
 .wall-notes { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(220px,100%),1fr)); gap: 28px; padding: 28px 0; }
-.wall-note { position: relative; background: #e4dcc2; color: #222; padding: 28px 22px; margin: 0; transform: rotate(var(--tilt)); font: bold 22px/1.5 'Segoe Print','Comic Sans MS',cursive; overflow-wrap: anywhere; white-space: pre-wrap; box-shadow: 3px 6px 0 #0006; }
+.wall-note { position: relative; background: #e4dcc2; color: #222; padding: 28px 22px; margin: 0; transform: rotate(var(--tilt)); font: 900 22px/1.4 'Arial Black','Impact',sans-serif; font-style:normal; letter-spacing:.04em; text-transform:uppercase; text-shadow:.5px .5px 0 currentColor; overflow-wrap: anywhere; white-space: pre-wrap; box-shadow: 3px 6px 0 #0006; }
 .wall-note::before { content: ''; position: absolute; top: -8px; left: 30%; width: 70px; height: 22px; background: #d2c398aa; transform: rotate(-4deg); }
 .marker-red { color:#8a2028; } .marker-blue { color:#173b80; } .marker-green { color:#245031; }
 .wall-form { display: grid; gap: 14px; max-width: 650px; }

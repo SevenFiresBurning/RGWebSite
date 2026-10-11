@@ -13,7 +13,9 @@ Confirmed project name: `rgwebsite`. Dashboard access currently requires the use
 
 Reference: https://developers.cloudflare.com/pages/functions/bindings/
 
-Score history is retained in D1; the public endpoint returns the top ten per game. Browser resets do not delete public scores. Existing local test scores are not uploaded automatically. Clearing browser storage still clears The Wall, which remains local.
+Score and wall history are retained in D1. Public endpoints return the top ten scores per game and latest 50 wall notes. Browser resets do not delete either. Existing browser-only test data is not uploaded automatically.
+
+The Wall also requires executing `migrations/0002_arcade_wall.sql` in the same `rg-arcade-scores` D1 database. No additional binding is needed. `/api/arcade/wall` validates text, marker color, origin and submission ID, limits writes, and retains all submitted notes. The frontend renders plain text in bold marker print; no cursive font is used. No browser-storage fallback remains.
 
 Initials and scores become public only after the player presses Save score. The API validates game, initials, integer score and submission ID, uses bound SQL parameters, rejects cross-origin submissions, limits submissions to three per minute per hashed network source, and makes retries idempotent. No raw IP is stored or returned; the internal hash is excluded from public results.
 

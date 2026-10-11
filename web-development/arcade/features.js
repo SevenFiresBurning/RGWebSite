@@ -28,15 +28,23 @@
     document.querySelector('#score-empty').hidden = rows.length > 0;
     message.textContent = 'No public scores yet. Finish a run to enter your initials.';
   }
-  function renderWall() {
+  let wallRequest = 0;
+  async function renderWall() {
+    const current = ++wallRequest;
     const wall = document.querySelector('#wall-notes');
     wall.replaceChildren();
-    const notes = store.notes();
+    const message = document.querySelector('#wall-empty');
+    message.hidden = false; message.textContent = 'Loading The Wall…';
+    let notes;
+    try {notes = await store.notes();}
+    catch(error) {if (current === wallRequest) message.textContent = error.message; return;}
+    if (current !== wallRequest) return;
     notes.forEach((note, i) => {
       const mark = document.createElement('p'); mark.className = 'wall-note marker-'+note.color;
       mark.style.setProperty('--tilt', ((i%5)-2)+'deg'); mark.textContent = note.text; wall.append(mark);
     });
     document.querySelector('#wall-empty').hidden = notes.length > 0;
+    message.textContent = 'A fresh patch of wall. Leave the first mark.';
   }
   const form = document.querySelector('#wall-form');
   const editor = document.createElement('dialog'); editor.className = 'wall-editor';
@@ -49,13 +57,20 @@
   open.addEventListener('click', () => { editor.showModal(); form.elements.message.focus(); });
   close.addEventListener('click', () => editor.close());
   editor.addEventListener('close', () => open.focus());
-  form.addEventListener('submit', event => {
+  let noteId = null;
+  form.addEventListener('input', () => {noteId = null;});
+  form.addEventListener('submit', async event => {
     event.preventDefault();
-    const saved = store.saveNote(form.elements.message.value, form.elements.marker.value);
-    document.querySelector('#wall-status').textContent = saved ? 'Your note is on this browser’s wall.' : 'Could not save. Use 1–160 characters and allow browser storage.';
-    if (saved) { form.elements.message.value = ''; renderWall(); }
+    const submit = form.querySelector('[type=submit]'); if (submit.disabled) return;
+    submit.disabled = true; noteId ||= crypto.randomUUID();
+    const status = document.querySelector('#wall-status'); status.textContent = 'Posting your note…';
+    try {
+      const saved = await store.saveNote(form.elements.message.value,form.elements.marker.value,noteId);
+      if (saved.ok) {status.textContent = 'Your note is on The Wall for everyone to see.'; form.elements.message.value = ''; noteId = null; renderWall();}
+    } catch(error) {status.textContent = error.message;}
+    finally {submit.disabled = false;}
   });
-  window.addEventListener('storage', () => { renderScores(); renderWall(); });
+  window.addEventListener('focus', () => { renderScores(); renderWall(); });
   window.addEventListener('pageshow', () => { renderScores(); renderWall(); });
   renderScores(); renderWall();
 })();
