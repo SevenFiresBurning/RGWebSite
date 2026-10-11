@@ -1,15 +1,23 @@
 (() => {
   'use strict';
   const store = window.RGArcadeStore;
-  const scoreClear = document.createElement('button'); scoreClear.type = 'button'; scoreClear.textContent = 'Clear my local scores';
-  document.querySelector('#score-empty').after(scoreClear);
-  scoreClear.addEventListener('click', () => {
-    scoreClear.textContent = store.clearScores() ? 'Local scores cleared' : 'Could not clear browser storage'; renderScores();
-  });
-  function renderScores() {
+  const selector = document.querySelector('#score-game');
+  selector.addEventListener('change', renderScores);
+  let scoreRequest = 0;
+  async function renderScores() {
+    const current = ++scoreRequest, game = selector.value;
     const body = document.querySelector('#score-rows');
     body.replaceChildren();
-    const rows = store.scores('hat-rack-rhythm');
+    document.querySelector('.score-table caption').textContent = selector.selectedOptions[0].textContent+' — Top 10';
+    const play = document.querySelector('#score-play');
+    play.href = game === 'ur-in-trouble' ? '../../arcade/games/urine-trouble/index.html' : '../../arcade/games/hatgame/index.html';
+    play.textContent = 'Play '+selector.selectedOptions[0].textContent;
+    const message = document.querySelector('#score-empty');
+    message.hidden = false; message.textContent = 'Loading public scores…';
+    let rows;
+    try { rows = await store.scores(game); }
+    catch (error) { if (current === scoreRequest) message.textContent = error.message; return; }
+    if (current !== scoreRequest) return;
     for (let i=0; i<10; i++) {
       const row = document.createElement('tr');
       for (const value of [String(i+1).padStart(2,'0'), rows[i]?.initials || '—', rows[i]?.score.toLocaleString() || '—']) {
@@ -18,6 +26,7 @@
       body.append(row);
     }
     document.querySelector('#score-empty').hidden = rows.length > 0;
+    message.textContent = 'No public scores yet. Finish a run to enter your initials.';
   }
   function renderWall() {
     const wall = document.querySelector('#wall-notes');

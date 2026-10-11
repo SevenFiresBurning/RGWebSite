@@ -1,4 +1,4 @@
-# Ur in Trouble — Arcade integration
+# Ur In Trouble — Arcade integration
 
 Added the supplied standalone game and artwork to Arcade, alongside HatGame. No commit, push or deployment performed.
 
@@ -12,7 +12,7 @@ Original files remain untouched. The copied game is `web-development/arcade/game
 
 ## Integration
 
-- Arcade card uses supplied artwork, the game's actual “Ur in Trouble” title, factual runner description, and Play Game destination.
+- Arcade card uses supplied artwork, the game's actual “Ur In Trouble” title, factual runner description, and Play Game destination.
 - Arcade description/social metadata updated through `site.config.json` and the existing generator.
 - Copied game has noindex metadata and the shared return bar. Escape keeps its original pause action; the visible Back to R&G link returns to Arcade.
 - Scoped body layout reserves 44px for the return bar rather than overlapping the game's header. Shared CSS is versioned for the new game to refresh existing preview caches.

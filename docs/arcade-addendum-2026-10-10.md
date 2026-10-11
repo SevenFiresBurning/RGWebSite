@@ -8,7 +8,7 @@ Hat Rack Rhythm already awards 100/60 points for perfect/good hits, combo bonuse
 
 Qualifying runs open an accessible native modal with exactly three A–Z/0–9 initials, case-normalized to uppercase. Scores sort descending; earlier equal scores retain their position. A full leaderboard requires beating its tenth score. Saving reports local rank, prevents repeat submission, and handles blocked storage. Zero is a legitimate final gameplay score and can qualify while places are empty.
 
-Arcade shows ten ranked positions, distinctly colored top three, explicit browser-local labels and a reset control. Urine Trouble rankings remain pending its scoring readiness. No global scores are claimed.
+Arcade shows ten ranked positions, distinctly colored top three, explicit browser-local labels and a reset control. Ur In Trouble rankings remain pending its scoring readiness. No global scores are claimed.
 
 ## The Wall
 
@@ -36,11 +36,17 @@ Mobile/touch testing remains incomplete: the existing in-app browser viewport co
 
 ## Later shared-backend pass
 
-Replace the browser adapter with Cloudflare-backed read/write APIs, add server-side score validation and abuse controls (local scores are editable in browser storage), shared note moderation, rate limits, admin removal and archived-wall support. No backend requests, moderation tools, freehand drawing or stickers were implemented here. Urine Trouble retains its previously documented speed-balance check failure and needs a separate gameplay/scoring review.
+Replace the browser adapter with Cloudflare-backed read/write APIs, add server-side score validation and abuse controls (local scores are editable in browser storage), shared note moderation, rate limits, admin removal and archived-wall support. No backend requests, moderation tools, freehand drawing or stickers were implemented here. Ur In Trouble retains its previously documented speed-balance check failure and needs a separate gameplay/scoring review.
 
 All current gallery work remains uncommitted on main. Unrelated existing untracked assets remain preserved.
 
 ## Layout refinement (supersedes the vertical composition above)
+
+### Two-game scoreboard update
+
+Public game labels now use **Ur In Trouble** throughout the site, metadata and documentation. Technical folder and asset paths remain stable for existing inbound links. The scoreboard now selects Hat Rack Rhythm or Ur In Trouble, each with its own local Top 10. Ur In Trouble's existing distance/pass score is captured after its completed ending sequence; restart and pause do not submit. Both games share the same validated initials interface.
+
+Verified a real Ur In Trouble run ending at 6,378 points, entered QAT, saved at rank 1, returned to Arcade and confirmed the score remained in its own list after refresh. The QA score was removed through the local reset control. Store tests additionally verify game isolation; site/demo/sync checks pass with no captured browser console errors. Gameplay balance remains unchanged. These changes are local and have not yet been pushed.
 
 Arcade now uses an integrated CSS Grid: at 1150px and above the columns are Wall / Games / High Scores with `1fr 2.3fr 1fr` proportions. The center shows large game cards vertically. Below that breakpoint games occupy the full top row and Wall / High Scores occupy equal columns beneath. At 600px and below game cards stack; feature typography, table cells and spacing become compact. Grid children use zero minimum widths, fixed table layout and wrapping to avoid intrinsic-width overflow. Controls retain 44px minimum touch height.
 

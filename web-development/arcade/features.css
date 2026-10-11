@@ -39,6 +39,7 @@
 .arcade-layout .arcade-feature p { font-size:14px; line-height:1.6; }
 .arcade-layout .eyebrow { font-size:10px; letter-spacing:.09em; }
 .arcade-layout .score-table { table-layout:fixed; font-size:14px; }
+#score-game { display:block; width:100%; min-width:0; min-height:44px; margin:10px 0; padding:8px 4px; background:#15181c; color:#fff; border:1px solid #929b9f; font-size:12px; }
 .arcade-layout .score-table th,.arcade-layout .score-table td { padding:12px 6px; }
 .arcade-layout .score-table caption { padding:16px 8px; font-size:13px; }
 .arcade-layout .score-table th:first-child { width:22%; }

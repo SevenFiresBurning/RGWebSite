@@ -1,7 +1,7 @@
 (function (root) {
   'use strict';
   const keys = { scores: 'rg.arcade.scores.v1', wall: 'rg.arcade.wall.v1' };
-  const games = ['hat-rack-rhythm'];
+  const games = ['hat-rack-rhythm', 'ur-in-trouble'];
   const colors = ['ink', 'red', 'blue', 'green'];
   function read(kind) {
     try { const value = JSON.parse(root.localStorage.getItem(keys[kind]) || '[]'); return Array.isArray(value) ? value : []; }
