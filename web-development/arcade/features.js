@@ -49,13 +49,6 @@
   open.addEventListener('click', () => { editor.showModal(); form.elements.message.focus(); });
   close.addEventListener('click', () => editor.close());
   editor.addEventListener('close', () => open.focus());
-  const clear = document.createElement('button'); clear.type = 'button'; clear.textContent = 'Clear my local wall';
-  clear.addEventListener('click', () => {
-    const saved = store.clearNotes();
-    document.querySelector('#wall-status').textContent = saved ? 'Your local wall is clear.' : 'Could not clear browser storage.';
-    if (saved) renderWall();
-  });
-  form.append(clear);
   form.addEventListener('submit', event => {
     event.preventDefault();
     const saved = store.saveNote(form.elements.message.value, form.elements.marker.value);
