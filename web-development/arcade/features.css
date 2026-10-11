@@ -81,8 +81,6 @@
 .arcade-layout .button::after { left:30px; width:10px; z-index:0; }
 .arcade-layout .arcade-heading { grid-area:heading; margin:0; padding:0 0 20px; min-width:0; }
 .arcade-layout { grid-template-areas:'heading heading' 'games games' 'wall scores'; }
-.wall-canopy { display:none; }
-.wall-canopy[hidden] { display:none!important; }
 #score-game[hidden] { display:none; }
 .score-games { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px; margin:16px 0; padding:4px; border:1px solid #64738d; background:#090d15; }
 .arcade-layout .score-games button { min-width:0; min-height:52px; padding:10px 6px; font-size:12px; font-weight:700; line-height:1.4; border:1px solid transparent; }
@@ -102,10 +100,8 @@
 .wall-expanded button { min-height:44px; padding:12px; background:#151a19; color:#fff; border:1px solid #929b9f; font:inherit; cursor:pointer; }
 .wall-expanded :focus-visible { outline:3px solid #afc1ff; outline-offset:3px; }
 @media(min-width:1150px) {
-  .arcade-layout { grid-template-areas:'heading canopy canopy' 'wall games scores'; row-gap:30px; }
+  .arcade-layout { grid-template-areas:'heading heading heading' 'wall games scores'; row-gap:30px; }
   .arcade-layout .arcade-heading h1 { font-size:clamp(36px,3.7vw,56px); }
-  .wall-canopy { display:block; grid-area:canopy; max-height:250px!important; padding:12px!important; }
-  .wall-canopy .wall-note { max-height:130px; }
 }
 @media(max-width:600px) {
   .score-games { grid-template-columns:minmax(0,1fr); }

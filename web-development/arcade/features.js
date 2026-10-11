@@ -45,8 +45,6 @@
   let wallRequest = 0;
   let activeNotes = [];
   const noteNodes=new Map();
-  const topNotes=document.querySelector('#wall-top-notes');
-  const desktopWall=matchMedia('(min-width:1150px)');
   const venue = document.querySelector('[aria-labelledby="wall-heading"] .venue-wall');
   const wallHome = document.createElement('div'); wallHome.className='wall-home'; venue.before(wallHome); wallHome.append(venue);
   const maximize = document.createElement('button'); maximize.type='button'; maximize.className='wall-maximize'; maximize.textContent='Maximize Wall'; wallHome.after(maximize);
@@ -60,11 +58,11 @@
   function layoutNotes() {
     const wall=document.querySelector('#wall-notes');
     const now=Date.now()+(store.wallClockOffset||0);
-    activeNotes.forEach((note,index) => {
+    activeNotes.forEach(note => {
       const mark=noteNodes.get(note.id);
-      (desktopWall.matches&&!expanded.open&&index<3?topNotes:wall).append(mark);
+      wall.append(mark);
     });
-    for (const host of [wall,topNotes]) {
+    for (const host of [wall]) {
       const width=host.clientWidth; if (!width) continue;
       let y=12;
       [...host.children].forEach(mark => {
@@ -79,11 +77,9 @@
       });
       host.style.height=Math.max(24,y+18)+'px';
     }
-    document.querySelector('.wall-canopy').hidden=!activeNotes.length||expanded.open;
   }
   let lastWallWidth=0;
   new ResizeObserver(entries => {const width=entries[0].contentRect.width;if(width!==lastWallWidth){lastWallWidth=width;layoutNotes();}}).observe(document.querySelector('#wall-notes'));
-  desktopWall.addEventListener('change',layoutNotes);
   new ResizeObserver(layoutNotes).observe(document.querySelector('.arcade-layout'));
   async function renderWall() {
     const current = ++wallRequest;
