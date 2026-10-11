@@ -66,7 +66,7 @@
         const p=window.RGWallLayout.presentation(note,activeNotes.length,now);
         const inset=4, lane=width/columns, column=index%columns;
         const noteWidth=Math.max(24,lane-12);
-        Object.assign(mark.style,{width:noteWidth+'px',height:noteWidth+'px',fontSize:'14px',left:column*lane+inset+Math.max(0,(lane-noteWidth-inset*2))*p.x+'px',top:rows[column]+'px'});
+        Object.assign(mark.style,{width:noteWidth+'px',height:'auto',minHeight:noteWidth+'px',fontSize:'14px',left:column*lane+inset+Math.max(0,(lane-noteWidth-inset*2))*p.x+'px',top:rows[column]+'px'});
         const safeAngle=Math.atan(Math.max(0,inset-2)*2/Math.max(1,mark.offsetHeight))*180/Math.PI;
         const rotation=Math.sign(p.rotation)*Math.min(Math.abs(p.rotation),safeAngle);
         mark.style.setProperty('--tilt',rotation+'deg'); mark.style.setProperty('--age',String(p.age));

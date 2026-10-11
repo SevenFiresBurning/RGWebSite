@@ -101,5 +101,5 @@
 @media(max-width:600px) { .arcade-layout .wall-note { transform:none; padding:18px 8px; } }
 .wall-note::before { width:50%; max-width:70px; }
 .arcade-layout .venue-wall { box-sizing:border-box; max-height:none; }
-.arcade-layout .wall-note { min-height:0; aspect-ratio:1; padding:12px 8px; overflow:auto; scrollbar-width:thin; }
+.arcade-layout .wall-note { min-height:0; padding:12px 8px; overflow:visible; }
 .arcade-layout .wall-note:focus-visible { outline:3px solid #afc1ff; outline-offset:2px; }
