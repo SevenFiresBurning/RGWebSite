@@ -59,7 +59,7 @@
     });
     for (const host of [wall]) {
       const width=host.clientWidth; if (!width) continue;
-      const columns=2;
+      const columns=matchMedia('(max-width:600px)').matches?1:2;
       const rows=Array(columns).fill(12);
       [...host.children].forEach((mark,index) => {
         const note=activeNotes.find(item=>item.id===mark.dataset.noteId);
