@@ -19,6 +19,6 @@
     if (!response.ok) throw Error(value.error || 'The Wall is unavailable.');
     return value;
   }
-  store.notes = async () => (await wall()).notes;
+  store.notes = async () => {const value = await wall(); store.wallClockOffset = value.serverNow-Date.now(); return value.notes;};
   store.saveNote = (text,color,id) => wall({method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:text.trim(),color,id})});
 })();
