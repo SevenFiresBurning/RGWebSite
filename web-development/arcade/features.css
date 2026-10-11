@@ -86,19 +86,10 @@
 .arcade-layout .score-games button { min-width:0; min-height:52px; padding:10px 6px; font-size:12px; font-weight:700; line-height:1.4; border:1px solid transparent; }
 .arcade-layout .score-games button[aria-checked="true"] { background:#afc1ff; color:#071020; border-color:#e2eaff; box-shadow:inset 0 -3px #567bea; }
 .score-games button:hover { border-color:#afc1ff; }
-.arcade-layout .wall-notes,.wall-expanded .wall-notes { position:relative; display:block; height:80px; max-height:none; overflow:hidden; padding:0; }
-.arcade-layout .wall-note,.wall-expanded .wall-note { position:absolute; box-sizing:border-box; padding:18px 10px; margin:0; min-height:64px; max-height:180px; overflow:hidden; border:1px solid #433f2d44; font-size:14px; border-radius:1px 2px calc(1px + var(--age,0)*10px) 1px; }
+.arcade-layout .wall-notes { position:relative; display:block; height:80px; max-height:none; overflow:hidden; padding:0; }
+.arcade-layout .wall-note { position:absolute; box-sizing:border-box; padding:18px 10px; margin:0; min-height:64px; max-height:none; overflow:hidden; border:1px solid #433f2d44; font-size:14px; border-radius:1px 2px calc(1px + var(--age,0)*10px) 1px; }
 .wall-note::after { content:''; position:absolute; right:0; bottom:0; width:calc(3px + var(--age,0)*17px); height:calc(3px + var(--age,0)*17px); background:linear-gradient(135deg,#0000 48%,#897c5266 49%,#f0e2b6 70%); pointer-events:none; }
 .arcade-layout .venue-wall { max-height:480px; overflow-y:auto; overflow-x:hidden; }
-.arcade-layout .wall-maximize { margin-top:12px; min-height:44px; }
-.wall-expanded { box-sizing:border-box; width:min(1100px,calc(100% - 24px)); height:calc(100dvh - 24px); max-width:none; max-height:none; padding:18px; background:#181c19; color:#fff; border:3px solid #757363; }
-.wall-expanded::backdrop { background:#000d; }
-.wall-expanded header { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:0 0 16px; }
-.wall-expanded h2 { margin:0; font-size:32px; }
-.wall-expanded .venue-wall { box-sizing:border-box; max-height:calc(100% - 72px); overflow-y:auto; overflow-x:hidden; }
-.wall-expanded .wall-note { max-height:none; padding:24px; }
-.wall-expanded button { min-height:44px; padding:12px; background:#151a19; color:#fff; border:1px solid #929b9f; font:inherit; cursor:pointer; }
-.wall-expanded :focus-visible { outline:3px solid #afc1ff; outline-offset:3px; }
 @media(min-width:1150px) {
   .arcade-layout { grid-template-areas:'heading heading heading' 'wall games scores'; row-gap:30px; }
   .arcade-layout .arcade-heading h1 { font-size:clamp(36px,3.7vw,56px); }
@@ -106,7 +97,6 @@
 @media(max-width:600px) {
   .score-games { grid-template-columns:minmax(0,1fr); }
   .arcade-layout .venue-wall { max-height:320px; }
-  .wall-expanded { padding:12px; }
-  .wall-expanded header { align-items:start; }
-  .wall-expanded h2 { font-size:26px; }
 }
+@media(max-width:600px) { .arcade-layout .wall-note { transform:none; padding:18px 8px; } }
+.wall-note::before { width:50%; max-width:70px; }

@@ -46,15 +46,6 @@
   let activeNotes = [];
   const noteNodes=new Map();
   const venue = document.querySelector('[aria-labelledby="wall-heading"] .venue-wall');
-  const wallHome = document.createElement('div'); wallHome.className='wall-home'; venue.before(wallHome); wallHome.append(venue);
-  const maximize = document.createElement('button'); maximize.type='button'; maximize.className='wall-maximize'; maximize.textContent='Maximize Wall'; wallHome.after(maximize);
-  const expanded = document.createElement('dialog'); expanded.className='wall-expanded'; expanded.setAttribute('aria-labelledby','wall-expanded-heading');
-  expanded.innerHTML='<header><h2 id="wall-expanded-heading">The Wall</h2><button type="button">Minimize / Close</button></header>';
-  document.body.append(expanded);
-  let oldOverflow='';
-  maximize.addEventListener('click',() => {oldOverflow=document.documentElement.style.overflow;document.documentElement.style.overflow='hidden';expanded.append(venue);expanded.showModal();layoutNotes();expanded.querySelector('button').focus();});
-  expanded.querySelector('button').addEventListener('click',() => expanded.close());
-  expanded.addEventListener('close',() => {wallHome.append(venue);document.documentElement.style.overflow=oldOverflow;layoutNotes();maximize.focus();});
   function layoutNotes() {
     const wall=document.querySelector('#wall-notes');
     const now=Date.now()+(store.wallClockOffset||0);
@@ -67,13 +58,16 @@
       let y=12;
       [...host.children].forEach(mark => {
         const note=activeNotes.find(item=>item.id===mark.dataset.noteId);
-        const p=window.RGWallLayout.presentation(note,activeNotes.length,now,expanded.open);
-        const noteWidth=Math.max(40,Math.min(expanded.open?560:440,width*p.width,width-28));
-        Object.assign(mark.style,{width:noteWidth+'px',fontSize:p.font+'px',left:12+Math.max(0,(width-noteWidth-24))*p.x+'px',top:y+'px'});
-        mark.style.setProperty('--tilt',p.rotation+'deg'); mark.style.setProperty('--age',String(p.age));
+        const p=window.RGWallLayout.presentation(note,activeNotes.length,now);
+        const inset=width<220?4:12;
+        const noteWidth=Math.max(40,width<220?width-8:Math.min(440,width*p.width,width-28));
+        Object.assign(mark.style,{width:noteWidth+'px',fontSize:p.font+'px',left:inset+Math.max(0,(width-noteWidth-inset*2))*p.x+'px',top:y+'px'});
+        const safeAngle=Math.atan(Math.max(0,inset-2)*2/Math.max(1,mark.offsetHeight))*180/Math.PI;
+        const rotation=Math.sign(p.rotation)*Math.min(Math.abs(p.rotation),safeAngle);
+        mark.style.setProperty('--tilt',rotation+'deg'); mark.style.setProperty('--age',String(p.age));
         mark.style.backgroundColor=`hsl(44 ${32+p.age*12}% ${86-p.age*16}%)`;
         mark.style.opacity=String(1-p.age*.12);
-        y+=mark.offsetHeight+p.gap-8;
+        y+=mark.offsetHeight+p.gap+noteWidth*Math.sin(Math.abs(rotation)*Math.PI/180);
       });
       host.style.height=Math.max(24,y+18)+'px';
     }
