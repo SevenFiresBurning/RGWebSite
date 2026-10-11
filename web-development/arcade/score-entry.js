@@ -8,6 +8,10 @@
   document.body.append(dialog);
   dialog.setAttribute('aria-labelledby', 'entry-title');
   dialog.querySelector('h2').id = 'entry-title';
+  // Keep game shortcuts from consuming letters while the player enters initials.
+  for (const type of ['keydown', 'keyup']) {
+    dialog.addEventListener(type, event => event.stopPropagation());
+  }
   document.addEventListener('keydown', event => {
     if (dialog.open && event.key === 'Escape') event.stopImmediatePropagation();
   }, true);
