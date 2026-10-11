@@ -48,6 +48,10 @@
   const venue = document.querySelector('[aria-labelledby="wall-heading"] .venue-wall');
   function layoutNotes() {
     const wall=document.querySelector('#wall-notes');
+    const scores=document.querySelector('[aria-labelledby="scores-heading"]');
+    const games=document.querySelector('.arcade-collection');
+    const bottom=matchMedia('(min-width:1150px)').matches?Math.max(scores.getBoundingClientRect().bottom,games.getBoundingClientRect().bottom):scores.getBoundingClientRect().bottom;
+    venue.style.height=Math.max(240,bottom-venue.getBoundingClientRect().top)+'px';
     const now=Date.now()+(store.wallClockOffset||0);
     activeNotes.forEach(note => {
       const mark=noteNodes.get(note.id);
@@ -55,26 +59,28 @@
     });
     for (const host of [wall]) {
       const width=host.clientWidth; if (!width) continue;
-      let y=12;
-      [...host.children].forEach(mark => {
+      const columns=Math.max(1,Math.floor(width/96));
+      const rows=Array(columns).fill(12);
+      [...host.children].forEach((mark,index) => {
         const note=activeNotes.find(item=>item.id===mark.dataset.noteId);
         const p=window.RGWallLayout.presentation(note,activeNotes.length,now);
-        const inset=width<220?4:12;
-        const noteWidth=Math.max(40,width<220?width-8:Math.min(440,width*p.width,width-28));
-        Object.assign(mark.style,{width:noteWidth+'px',fontSize:p.font+'px',left:inset+Math.max(0,(width-noteWidth-inset*2))*p.x+'px',top:y+'px'});
+        const inset=4, lane=width/columns, column=index%columns;
+        const noteWidth=Math.max(40,Math.min(88,lane-12));
+        Object.assign(mark.style,{width:noteWidth+'px',height:noteWidth+'px',fontSize:'14px',left:column*lane+inset+Math.max(0,(lane-noteWidth-inset*2))*p.x+'px',top:rows[column]+'px'});
         const safeAngle=Math.atan(Math.max(0,inset-2)*2/Math.max(1,mark.offsetHeight))*180/Math.PI;
         const rotation=Math.sign(p.rotation)*Math.min(Math.abs(p.rotation),safeAngle);
         mark.style.setProperty('--tilt',rotation+'deg'); mark.style.setProperty('--age',String(p.age));
         mark.style.backgroundColor=`hsl(44 ${32+p.age*12}% ${86-p.age*16}%)`;
         mark.style.opacity=String(1-p.age*.12);
-        y+=mark.offsetHeight+p.gap+noteWidth*Math.sin(Math.abs(rotation)*Math.PI/180);
+        rows[column]+=mark.offsetHeight+12+noteWidth*Math.sin(Math.abs(rotation)*Math.PI/180);
       });
-      host.style.height=Math.max(24,y+18)+'px';
+      host.style.height=Math.max(24,...rows.map(y=>y+18))+'px';
     }
   }
   let lastWallWidth=0;
   new ResizeObserver(entries => {const width=entries[0].contentRect.width;if(width!==lastWallWidth){lastWallWidth=width;layoutNotes();}}).observe(document.querySelector('#wall-notes'));
   new ResizeObserver(layoutNotes).observe(document.querySelector('.arcade-layout'));
+  new ResizeObserver(layoutNotes).observe(document.querySelector('[aria-labelledby="scores-heading"]'));
   async function renderWall() {
     const current = ++wallRequest;
     const wall = document.querySelector('#wall-notes');
@@ -92,7 +98,7 @@
       let mark=noteNodes.get(note.id);
       if (!mark) {mark=document.createElement('p');mark.dataset.noteId=note.id;noteNodes.set(note.id,mark);}
       mark.className = 'wall-note marker-'+note.color;
-      mark.textContent=note.text; mark.title=new Date(note.createdAt).toLocaleDateString();
+      mark.textContent=note.text; mark.title=new Date(note.createdAt).toLocaleDateString(); mark.tabIndex=0;
     });
     layoutNotes();
     document.querySelector('#wall-empty').hidden = activeNotes.length > 0;
