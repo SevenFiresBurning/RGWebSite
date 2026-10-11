@@ -5,3 +5,21 @@
 .gallery-card p { line-height: 1.75; }
 .gallery-card--unavailable { display: flex; align-items: center; }
 @media (max-width: 700px) { .gallery-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; } }
+.collection-section { margin: 0 7% 80px; padding: 40px 0; border-top: 1px solid var(--line); }
+.collection-section > h2 { font-size: clamp(36px, 5vw, 64px); margin: 14px 0 22px; }
+.collection-section > .intro { max-width: 760px; margin-bottom: 36px; }
+.collection-entrances { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; }
+.collection-card { min-width: 0; border-bottom: 1px solid var(--line); padding-bottom: 30px; }
+.collection-card h2, .collection-card h3 { font-size: clamp(28px, 3.5vw, 42px); margin: 12px 0 18px; }
+.collection-card p { line-height: 1.75; }
+.collection-preview { display: block; }
+.collection-preview img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; background: #0d0f12; margin-bottom: 24px; }
+.collection-preview:hover, .collection-preview:focus-visible { outline: 2px solid var(--accent, #829fff); outline-offset: 4px; }
+.collection-card--arcade .eyebrow { letter-spacing: .16em; }
+.collection-all { display: inline-block; margin-top: 32px; }
+.evidence-grid.evidence-grid--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.arcade-upcoming { border-top: 1px solid var(--line); padding-top: 32px; }
+@media (max-width: 700px) {
+  .collection-entrances, .evidence-grid.evidence-grid--two { grid-template-columns: minmax(0, 1fr); }
+  .collection-section { margin-bottom: 48px; padding-top: 28px; }
+}

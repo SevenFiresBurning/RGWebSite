@@ -44,16 +44,22 @@
       "parent": "index.html"
     },
     {
-      "file": "web-development/marketplace/index.html",
-      "title": "Marketplace",
-      "description": "Website examples from Resistance & Ground: Bright Desk, Apple & Chalk, Jenny & The StreetWalkers, and Frankie’s Franks.",
+      "file": "web-development/built-by-rg/index.html",
+      "title": "Built by R&G",
+      "description": "Practical commercial websites and playful interactive projects built by Resistance & Ground.",
       "parent": "web-development/index.html"
     },
     {
-      "file": "web-development/arcade/index.html",
+      "file": "web-development/built-by-rg/market/index.html",
+      "title": "Market",
+      "description": "Live client websites and web concepts: Jenny & The StreetWalkers, Teacher Basic, Apple & Chalk, and Frankie’s Franks.",
+      "parent": "web-development/built-by-rg/index.html"
+    },
+    {
+      "file": "web-development/built-by-rg/arcade/index.html",
       "title": "Arcade",
-      "description": "Play independent browser games: HatGame — Hat Rack Rhythm and Ur in Trouble.",
-      "parent": "web-development/index.html"
+      "description": "Independent games and prototypes: Hat Rack Rhythm and Urine Trouble.",
+      "parent": "web-development/built-by-rg/index.html"
     },
     {
       "file": "web-development/portfolio/yeschef/index.html",
@@ -156,10 +162,12 @@
     "music/mikes-wilson/index.html": "music-media/artists-collaborations/music/mikes-wilson/index.html",
     "production/publishing/index.html": "music-media/publishing/index.html",
     "webdev/index.html": "web-development/index.html",
-    "projects/index.html": "web-development/marketplace/index.html",
+    "projects/index.html": "web-development/built-by-rg/index.html",
     "production/music-publishing.html": "resources/what-is-music-publishing/index.html",
     "production/publishing/example-deals.html": "music-media/publishing/index.html",
-    "web-development/portfolio/index.html": "web-development/marketplace/index.html"
+    "web-development/portfolio/index.html": "web-development/built-by-rg/index.html",
+    "web-development/marketplace/index.html": "web-development/built-by-rg/market/index.html",
+    "web-development/arcade/index.html": "web-development/built-by-rg/arcade/index.html"
   },
   "images": {
     "assets/rg-social-card.png": {
