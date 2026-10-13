@@ -47,8 +47,9 @@
 .article-card { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 6%; padding-block: 36px; border-top: 1px solid var(--line); align-items: center; }
 .article-card img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; }
 .article-card img[src$="Swilson.JPEG"] { object-fit: cover; object-position: 50% 68%; }
-.article-card h2 { font-size: clamp(26px, 3vw, 38px); margin: 12px 0 20px; }
-.article-card h2 a:hover { color: var(--blue); }
+.article-card h2,.article-card h3 { font-size: clamp(26px, 3vw, 38px); margin: 12px 0 20px; }
+.article-card h2 a:hover,.article-card h3 a:hover { color: var(--blue); }
+.article-list > h2 { font-size:clamp(28px,3vw,36px); margin-bottom:24px; }
 .article-card p { line-height: 1.75; }
 .related-reading { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 12px; }
 .related-reading ul { padding-left: 20px; }

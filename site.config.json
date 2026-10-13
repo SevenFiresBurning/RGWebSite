@@ -10,32 +10,26 @@
     {
       "file": "music-media/index.html",
       "title": "Music & Media",
-      "description": "Artist production, collaboration, recordings and media at Resistance & Ground.",
+      "description": "Recording, production, collaboration, and the work behind getting music into the world.",
       "parent": "index.html"
     },
     {
       "file": "music-media/artists-collaborations/index.html",
-      "title": "Publishing & Artist Services",
-      "description": "Artist support, publishing rights and administration at Resistance & Ground.",
-      "parent": "index.html"
-    },
-    {
-      "file": "music-media/artists-collaborations/music/index.html",
-      "title": "Artists",
-      "description": "Published artists and collaborators represented by Resistance & Ground.",
-      "parent": "music-media/artists-collaborations/index.html"
+      "title": "Artists & Collaborations",
+      "description": "Music, recordings, and creative projects developed with independent artists.",
+      "parent": "music-media/index.html"
     },
     {
       "file": "music-media/artists-collaborations/music/mikes-wilson/index.html",
       "title": "Mike’s Wilson",
       "description": "Music, recordings, videos, and updates from Mike’s Wilson.",
-      "parent": "music-media/artists-collaborations/music/index.html"
+      "parent": "music-media/artists-collaborations/index.html"
     },
     {
       "file": "music-media/publishing/index.html",
       "title": "Publishing",
       "description": "Artist education, creative ownership, and plain-language publishing support from Resistance & Ground.",
-      "parent": "music-media/artists-collaborations/index.html"
+      "parent": "music-media/index.html"
     },
     {
       "file": "web-development/index.html",
@@ -52,20 +46,20 @@
     {
       "file": "web-development/built-by-rg/market/index.html",
       "title": "Market",
-      "description": "Live client websites and web concepts: Jenny & The StreetWalkers, Teacher Basic, Apple & Chalk, and Frankie’s Franks.",
+      "description": "Live client websites, website templates, business concepts, and YesChef, a restaurant operations and costing tool in development.",
       "parent": "web-development/built-by-rg/index.html"
     },
     {
       "file": "web-development/built-by-rg/arcade/index.html",
       "title": "Arcade",
-      "description": "Independent games and prototypes: Hat Rack Rhythm and Ur In Trouble.",
+      "description": "Independent games and prototypes: Hat Rack Rhythm, Ur In Trouble, and AfterFall, a strategy game in development.",
       "parent": "web-development/built-by-rg/index.html"
     },
     {
       "file": "web-development/portfolio/yeschef/index.html",
       "title": "YesChef",
       "description": "An in-development restaurant costing and operations tool based on real kitchen workflows.",
-      "parent": "web-development/index.html",
+      "parent": "web-development/built-by-rg/market/index.html",
       "image": "assets/YesChefWeb.png",
       "navigation": false
     },
@@ -73,7 +67,7 @@
       "file": "web-development/portfolio/afterfall/index.html",
       "title": "AfterFall",
       "description": "An in-development strategy game prototype centered on territory, resources, infrastructure, and diplomacy.",
-      "parent": "web-development/index.html",
+      "parent": "web-development/built-by-rg/arcade/index.html",
       "image": "assets/afterFallLogo.png",
       "navigation": false
     },
@@ -88,20 +82,14 @@
     {
       "file": "resources/index.html",
       "title": "Resources",
-      "description": "Articles and reference material for artists and independent creators.",
+      "description": "Practical information for artists and independent creators. Understand your rights, protect your work, and make informed decisions.",
       "parent": "music-media/publishing/index.html"
-    },
-    {
-      "file": "resources/articles/index.html",
-      "title": "Articles",
-      "description": "Plain-language articles from Resistance & Ground, beginning with music publishing.",
-      "parent": "resources/index.html"
     },
     {
       "file": "resources/what-is-music-publishing/index.html",
       "title": "What Is Music Publishing?",
       "description": "Understand the song, the recording, publishing administration, and questions about ownership and control.",
-      "parent": "resources/articles/index.html",
+      "parent": "resources/index.html",
       "image": "assets/Swilson.JPEG",
       "article": {
         "content": "resources/article-content/what-is-music-publishing.html",
@@ -110,14 +98,15 @@
           "resources/what-the-mlc-actually-does/index.html",
           "resources/reference/index.html"
         ]
-      }
+      },
+      "summary": "Understand the difference between a song and a recording, what publishing involves, and the questions to ask about ownership and control."
     },
     {
       "file": "resources/what-the-mlc-actually-does/index.html",
       "title": "What the MLC Actually Does",
       "description": "What The MLC handles, what it does not, and how U.S. digital mechanical royalties relate to songs, recordings, and catalog records.",
-      "summary": "The MLC handles certain U.S. digital mechanical royalties tied to musical compositions. It does not distribute your music, collect performance royalties, or handle your master recording.",
-      "parent": "resources/articles/index.html",
+      "summary": "Learn how the MLC handles certain U.S. digital mechanical royalties, what it collects, and what falls outside its responsibilities.",
+      "parent": "resources/index.html",
       "image": "assets/mlcImage.png",
       "article": {
         "content": "resources/article-content/what-the-mlc-actually-does.html",
@@ -151,7 +140,6 @@
   "navigation": [
     "web-development/index.html",
     "music-media/index.html",
-    "music-media/artists-collaborations/index.html",
     "about/index.html",
     "contact/index.html"
   ],
@@ -167,7 +155,9 @@
     "production/publishing/example-deals.html": "music-media/publishing/index.html",
     "web-development/portfolio/index.html": "web-development/built-by-rg/index.html",
     "web-development/marketplace/index.html": "web-development/built-by-rg/market/index.html",
-    "web-development/arcade/index.html": "web-development/built-by-rg/arcade/index.html"
+    "web-development/arcade/index.html": "web-development/built-by-rg/arcade/index.html",
+    "music-media/artists-collaborations/music/index.html": "music-media/artists-collaborations/index.html",
+    "resources/articles/index.html": "resources/index.html"
   },
   "images": {
     "assets/rg-social-card.png": {

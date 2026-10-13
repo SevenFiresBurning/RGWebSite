@@ -45,6 +45,15 @@ function componentLine(end=false){
  return `<div class="page-component-line${end?' page-component-line--end':''}" aria-hidden="true"><svg viewBox="0 0 1000 40" focusable="false"><path class="circuit-trace" d="${lead} ${ground}" /><path class="circuit-signal" pathLength="100" d="${lead}" /><path class="circuit-ground" d="${ground}" /></svg></div>`;
 }
 function output(f,s){if(check){if(!fs.existsSync(root+'/'+f)||fs.readFileSync(root+'/'+f,'utf8')!==s)stale.push(f)}else{fs.mkdirSync(path.dirname(root+'/'+f),{recursive:true});fs.writeFileSync(root+'/'+f,s)}}
+function canonicalLinks(html,file){return html.replace(/href="([^"]+)"/g,(match,href)=>{
+ if(/^(https?:|mailto:|data:|tel:|#)/.test(href))return match;
+ const target=new URL(href.replaceAll('&amp;','&'),config.siteUrl+'/'+file);
+ if(target.origin!==config.siteUrl)return match;
+ let resolved=target.pathname.slice(1);if(resolved.endsWith('/'))resolved+='index.html';
+ if(config.redirects[resolved])resolved=config.redirects[resolved];
+ if(!byFile.has(resolved))return match;
+ return `href="${esc('/'+resolved.replace(/index\.html$/,'')+target.search+target.hash)}"`;
+});}
 for(const p of config.pages){let s=p.article?articlePage(p,config):fs.readFileSync(root+'/'+p.file,'utf8');
 s=s.replace(/<!-- rg:article-list -->[\s\S]*?<!-- \/rg:article-list -->/,'<!-- rg:article-list -->'+articleListing(p,config)+'<!-- /rg:article-list -->');s=s.replace(/<header\b[^>]*>[\s\S]*?<\/header>/,header(p));s=s.replace(/<!-- rg:metadata -->[\s\S]*?<!-- \/rg:metadata -->/,metadata(p));
 const crumbs=`<nav class="breadcrumbs" aria-label="Breadcrumb"><ol>${ancestors(p).map((a,i,list)=>`<li>${i===list.length-1?`<span aria-current="page">${esc(a.title)}</span>`:`<a href="${relative(p.file,a.file)}">${a.file==='index.html'?'Home':esc(a.title)}</a>`}</li>`).join('')}</ol></nav>`;
@@ -56,9 +65,9 @@ if(p.file!=='index.html'){
  s=s.replace('<!-- /rg:breadcrumbs -->','<!-- /rg:breadcrumbs --><!-- rg:component-start -->'+componentLine()+'<!-- /rg:component-start -->');
  s=s.replace('</main>','<!-- rg:component-end -->'+componentLine(true)+'<!-- /rg:component-end --></main>');
 }
-output(p.file,s)}
+output(p.file,canonicalLinks(s,p.file))}
 const rules=[];
 for(const[from,to]of Object.entries(config.redirects)){const dest='/'+to.replace(/index\.html$/,'');for(const old of from.endsWith('/index.html')?['/'+from,'/'+from.replace(/index\.html$/,''),'/'+from.replace(/\/index\.html$/,'')]:['/'+from])rules.push(`${old} ${dest} 301`)}
 output('_redirects',rules.join('\n')+'\n');
-output('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+config.pages.map(p=>`  <url><loc>${esc(url(p.file))}</loc></url>`).join('\n')+'\n</urlset>\n');
+output('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+config.pages.filter(p=>!p.noindex&&!config.redirects[p.file]).map(p=>`  <url><loc>${esc(url(p.file))}</loc></url>`).join('\n')+'\n</urlset>\n');
 if(stale.length){console.error('Generated files are stale:',stale.join(', '));process.exitCode=1}else console.log(check?'Shared navigation, metadata, redirects and sitemap are current.':'Shared site files generated.');

@@ -24,15 +24,15 @@ function articlePage(page, config) {
   <figure class="resource-visual"><img src="${relative(page.file, page.image)}" width="${image.width}" height="${image.height}" alt="${esc(image.alt)}" decoding="async" /></figure>
   <div class="resource-copy">
     ${content}
-    <nav class="related-reading" aria-labelledby="related-reading-heading"><h2 id="related-reading-heading">Keep reading</h2><ul>${related}</ul><a class="button button--primary" href="${relative(page.file, 'resources/articles/index.html')}">All articles <span aria-hidden="true">→</span></a></nav>
+    <nav class="related-reading" aria-labelledby="related-reading-heading"><h2 id="related-reading-heading">Keep reading</h2><ul>${related}</ul><a class="button button--primary" href="${relative(page.file, 'resources/index.html')}">All articles <span aria-hidden="true">→</span></a></nav>
   </div>
 </article>`);
 }
 
 function articleListing(page, config) {
-  return `<section class="article-list" aria-label="Publishing articles">${config.pages.filter(p => p.article).map(p => {
+  return `<section class="article-list" aria-labelledby="resources-articles-heading"><h2 id="resources-articles-heading">Articles</h2>${config.pages.filter(p => p.article).map(p => {
     const image = config.images[p.image];
-    return `<article class="article-card"><img src="${relative(page.file, p.image)}" width="${image.width}" height="${image.height}" alt="${esc(image.alt)}" loading="lazy" /><div><p class="eyebrow">Publishing</p><h2><a href="${relative(page.file, p.file)}">${esc(p.title)}</a></h2><p>${esc(p.summary || p.description)}</p><a class="plain-link" href="${relative(page.file, p.file)}" aria-label="Read ${esc(p.title)}">Read the article <span aria-hidden="true">→</span></a></div></article>`;
+    return `<article class="article-card"><img src="${relative(page.file, p.image)}" width="${image.width}" height="${image.height}" alt="${esc(image.alt)}" loading="lazy" /><div><p class="eyebrow">Publishing</p><h3><a href="${relative(page.file, p.file)}">${esc(p.title)}</a></h3><p>${esc(p.summary || p.description)}</p><a class="plain-link" href="${relative(page.file, p.file)}" aria-label="Read Article: ${esc(p.title)}">Read Article <span aria-hidden="true">→</span></a></div></article>`;
   }).join('\n')}</section>`;
 }
 module.exports = { articlePage, articleListing };

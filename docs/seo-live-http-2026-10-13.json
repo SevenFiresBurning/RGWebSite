@@ -1,0 +1,1248 @@
+[
+  {
+    "original": "/production/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/production/",
+        "status": 301,
+        "location": "/music-media/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/"
+  },
+  {
+    "original": "/production/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/production/index.html",
+        "status": 301,
+        "location": "/music-media/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/"
+  },
+  {
+    "original": "/production/publishing/artists/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/production/publishing/artists/",
+        "status": 301,
+        "location": "/music-media/artists-collaborations/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/artists-collaborations/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/artists-collaborations/"
+  },
+  {
+    "original": "/production/publishing/artists/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/production/publishing/artists/index.html",
+        "status": 301,
+        "location": "/music-media/artists-collaborations/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/artists-collaborations/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/artists-collaborations/"
+  },
+  {
+    "original": "/production",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/production",
+        "status": 301,
+        "location": "/music-media/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/"
+  },
+  {
+    "original": "/production/publishing/artists",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/production/publishing/artists",
+        "status": 301,
+        "location": "/music-media/artists-collaborations/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/artists-collaborations/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/artists-collaborations/"
+  },
+  {
+    "original": "/music/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/music/",
+        "status": 301,
+        "location": "/music-media/artists-collaborations/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/artists-collaborations/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/artists-collaborations/"
+  },
+  {
+    "original": "/music/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/music/index.html",
+        "status": 301,
+        "location": "/music-media/artists-collaborations/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/artists-collaborations/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/artists-collaborations/"
+  },
+  {
+    "original": "/music",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/music",
+        "status": 301,
+        "location": "/music-media/artists-collaborations/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/artists-collaborations/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/artists-collaborations/"
+  },
+  {
+    "original": "/music/mikes-wilson/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/music/mikes-wilson/",
+        "status": 301,
+        "location": "/music-media/artists-collaborations/music/mikes-wilson/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/artists-collaborations/music/mikes-wilson/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/artists-collaborations/music/mikes-wilson/"
+  },
+  {
+    "original": "/music/mikes-wilson",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/music/mikes-wilson",
+        "status": 301,
+        "location": "/music-media/artists-collaborations/music/mikes-wilson/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/artists-collaborations/music/mikes-wilson/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/artists-collaborations/music/mikes-wilson/"
+  },
+  {
+    "original": "/music/mikes-wilson/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/music/mikes-wilson/index.html",
+        "status": 301,
+        "location": "/music-media/artists-collaborations/music/mikes-wilson/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/artists-collaborations/music/mikes-wilson/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/artists-collaborations/music/mikes-wilson/"
+  },
+  {
+    "original": "/production/publishing/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/production/publishing/index.html",
+        "status": 301,
+        "location": "/music-media/publishing/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/publishing/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/publishing/"
+  },
+  {
+    "original": "/production/publishing/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/production/publishing/",
+        "status": 301,
+        "location": "/music-media/publishing/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/publishing/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/publishing/"
+  },
+  {
+    "original": "/webdev/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/webdev/",
+        "status": 301,
+        "location": "/web-development/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/"
+  },
+  {
+    "original": "/production/publishing",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/production/publishing",
+        "status": 301,
+        "location": "/music-media/publishing/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/publishing/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/publishing/"
+  },
+  {
+    "original": "/webdev/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/webdev/index.html",
+        "status": 301,
+        "location": "/web-development/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/"
+  },
+  {
+    "original": "/projects/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/projects/index.html",
+        "status": 301,
+        "location": "/web-development/built-by-rg/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/built-by-rg/"
+  },
+  {
+    "original": "/projects/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/projects/",
+        "status": 301,
+        "location": "/web-development/built-by-rg/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/built-by-rg/"
+  },
+  {
+    "original": "/webdev",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/webdev",
+        "status": 301,
+        "location": "/web-development/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/"
+  },
+  {
+    "original": "/projects",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/projects",
+        "status": 301,
+        "location": "/web-development/built-by-rg/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/built-by-rg/"
+  },
+  {
+    "original": "/production/music-publishing.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/production/music-publishing.html",
+        "status": 301,
+        "location": "/resources/what-is-music-publishing/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/resources/what-is-music-publishing/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/resources/what-is-music-publishing/"
+  },
+  {
+    "original": "/production/publishing/example-deals.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/production/publishing/example-deals.html",
+        "status": 301,
+        "location": "/music-media/publishing/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/publishing/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/publishing/"
+  },
+  {
+    "original": "/web-development/portfolio/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/portfolio/",
+        "status": 301,
+        "location": "/web-development/built-by-rg/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/built-by-rg/"
+  },
+  {
+    "original": "/web-development/portfolio/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/portfolio/index.html",
+        "status": 301,
+        "location": "/web-development/built-by-rg/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/built-by-rg/"
+  },
+  {
+    "original": "/web-development/portfolio",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/portfolio",
+        "status": 301,
+        "location": "/web-development/built-by-rg/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/built-by-rg/"
+  },
+  {
+    "original": "/web-development/marketplace/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/marketplace/index.html",
+        "status": 301,
+        "location": "/web-development/built-by-rg/market/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/market/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/built-by-rg/market/"
+  },
+  {
+    "original": "/web-development/marketplace/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/marketplace/",
+        "status": 301,
+        "location": "/web-development/built-by-rg/market/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/market/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/built-by-rg/market/"
+  },
+  {
+    "original": "/web-development/arcade/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/arcade/index.html",
+        "status": 301,
+        "location": "/web-development/built-by-rg/arcade/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/arcade/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/built-by-rg/arcade/"
+  },
+  {
+    "original": "/web-development/marketplace",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/marketplace",
+        "status": 301,
+        "location": "/web-development/built-by-rg/market/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/market/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/built-by-rg/market/"
+  },
+  {
+    "original": "/web-development/arcade",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/arcade",
+        "status": 301,
+        "location": "/web-development/built-by-rg/arcade/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/arcade/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/built-by-rg/arcade/"
+  },
+  {
+    "original": "/web-development/arcade/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/arcade/",
+        "status": 301,
+        "location": "/web-development/built-by-rg/arcade/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/arcade/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/built-by-rg/arcade/"
+  },
+  {
+    "original": "/music-media/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/music-media/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/"
+  },
+  {
+    "original": "/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/"
+  },
+  {
+    "original": "/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/index.html",
+        "status": 308,
+        "location": "/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/"
+  },
+  {
+    "original": "/music-media/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/music-media/index.html",
+        "status": 308,
+        "location": "/music-media/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/"
+  },
+  {
+    "original": "/music-media/artists-collaborations/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/music-media/artists-collaborations/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/artists-collaborations/"
+  },
+  {
+    "original": "/music-media/artists-collaborations/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/music-media/artists-collaborations/index.html",
+        "status": 308,
+        "location": "/music-media/artists-collaborations/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/artists-collaborations/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/artists-collaborations/"
+  },
+  {
+    "original": "/music-media/artists-collaborations/music/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/music-media/artists-collaborations/music/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/artists-collaborations/music/"
+  },
+  {
+    "original": "/music-media/artists-collaborations/music/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/music-media/artists-collaborations/music/index.html",
+        "status": 308,
+        "location": "/music-media/artists-collaborations/music/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/artists-collaborations/music/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/artists-collaborations/music/"
+  },
+  {
+    "original": "/music-media/artists-collaborations/music/mikes-wilson/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/music-media/artists-collaborations/music/mikes-wilson/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/artists-collaborations/music/mikes-wilson/"
+  },
+  {
+    "original": "/music-media/publishing/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/music-media/publishing/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/publishing/"
+  },
+  {
+    "original": "/music-media/publishing/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/music-media/publishing/index.html",
+        "status": 308,
+        "location": "/music-media/publishing/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/publishing/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/publishing/"
+  },
+  {
+    "original": "/web-development/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/index.html",
+        "status": 308,
+        "location": "/web-development/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/"
+  },
+  {
+    "original": "/music-media/artists-collaborations/music/mikes-wilson/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/music-media/artists-collaborations/music/mikes-wilson/index.html",
+        "status": 308,
+        "location": "/music-media/artists-collaborations/music/mikes-wilson/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/music-media/artists-collaborations/music/mikes-wilson/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/music-media/artists-collaborations/music/mikes-wilson/"
+  },
+  {
+    "original": "/web-development/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/"
+  },
+  {
+    "original": "/web-development/built-by-rg/market/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/market/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/built-by-rg/market/"
+  },
+  {
+    "original": "/web-development/built-by-rg/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/built-by-rg/"
+  },
+  {
+    "original": "/web-development/built-by-rg/market/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/market/index.html",
+        "status": 308,
+        "location": "/web-development/built-by-rg/market/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/market/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/built-by-rg/market/"
+  },
+  {
+    "original": "/web-development/built-by-rg/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/index.html",
+        "status": 308,
+        "location": "/web-development/built-by-rg/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/built-by-rg/"
+  },
+  {
+    "original": "/web-development/built-by-rg/arcade/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/arcade/index.html",
+        "status": 308,
+        "location": "/web-development/built-by-rg/arcade/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/arcade/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/built-by-rg/arcade/"
+  },
+  {
+    "original": "/web-development/built-by-rg/arcade/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/built-by-rg/arcade/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/built-by-rg/arcade/"
+  },
+  {
+    "original": "/web-development/portfolio/yeschef/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/portfolio/yeschef/index.html",
+        "status": 308,
+        "location": "/web-development/portfolio/yeschef/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/portfolio/yeschef/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/portfolio/yeschef/"
+  },
+  {
+    "original": "/web-development/portfolio/jenny-and-the-streetwalkers/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/portfolio/jenny-and-the-streetwalkers/index.html",
+        "status": 308,
+        "location": "/web-development/portfolio/jenny-and-the-streetwalkers/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/portfolio/jenny-and-the-streetwalkers/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/portfolio/jenny-and-the-streetwalkers/"
+  },
+  {
+    "original": "/web-development/portfolio/yeschef/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/portfolio/yeschef/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/portfolio/yeschef/"
+  },
+  {
+    "original": "/web-development/portfolio/afterfall/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/portfolio/afterfall/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/portfolio/afterfall/"
+  },
+  {
+    "original": "/web-development/portfolio/afterfall/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/portfolio/afterfall/index.html",
+        "status": 308,
+        "location": "/web-development/portfolio/afterfall/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/portfolio/afterfall/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/portfolio/afterfall/"
+  },
+  {
+    "original": "/web-development/portfolio/jenny-and-the-streetwalkers/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/portfolio/jenny-and-the-streetwalkers/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/portfolio/jenny-and-the-streetwalkers/"
+  },
+  {
+    "original": "/resources/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/resources/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/resources/"
+  },
+  {
+    "original": "/resources/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/resources/index.html",
+        "status": 308,
+        "location": "/resources/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/resources/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/resources/"
+  },
+  {
+    "original": "/resources/articles/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/resources/articles/index.html",
+        "status": 308,
+        "location": "/resources/articles/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/resources/articles/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/resources/articles/"
+  },
+  {
+    "original": "/resources/articles/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/resources/articles/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/resources/articles/"
+  },
+  {
+    "original": "/resources/what-is-music-publishing/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/resources/what-is-music-publishing/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/resources/what-is-music-publishing/"
+  },
+  {
+    "original": "/resources/what-is-music-publishing/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/resources/what-is-music-publishing/index.html",
+        "status": 308,
+        "location": "/resources/what-is-music-publishing/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/resources/what-is-music-publishing/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/resources/what-is-music-publishing/"
+  },
+  {
+    "original": "/resources/reference/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/resources/reference/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/resources/reference/"
+  },
+  {
+    "original": "/resources/what-the-mlc-actually-does/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/resources/what-the-mlc-actually-does/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/resources/what-the-mlc-actually-does/"
+  },
+  {
+    "original": "/resources/what-the-mlc-actually-does/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/resources/what-the-mlc-actually-does/index.html",
+        "status": 308,
+        "location": "/resources/what-the-mlc-actually-does/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/resources/what-the-mlc-actually-does/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/resources/what-the-mlc-actually-does/"
+  },
+  {
+    "original": "/resources/reference/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/resources/reference/index.html",
+        "status": 308,
+        "location": "/resources/reference/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/resources/reference/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/resources/reference/"
+  },
+  {
+    "original": "/about/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/about/index.html",
+        "status": 308,
+        "location": "/about/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/about/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/about/"
+  },
+  {
+    "original": "/about/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/about/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/about/"
+  },
+  {
+    "original": "/contact/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/contact/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/contact/"
+  },
+  {
+    "original": "/contact/index.html?type=Web%20Development",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/contact/index.html?type=Web%20Development",
+        "status": 308,
+        "location": "/contact/?type=Web%20Development",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/contact/?type=Web%20Development",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/contact/"
+  },
+  {
+    "original": "/contact/?type=Web%20Development",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/contact/?type=Web%20Development",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/contact/"
+  },
+  {
+    "original": "/contact/index.html",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/contact/index.html",
+        "status": 308,
+        "location": "/contact/",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/contact/",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/contact/"
+  },
+  {
+    "original": "/web-development/arcade/games/hatgame/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/arcade/games/hatgame/",
+        "status": 200,
+        "location": null,
+        "robots": "noindex, follow"
+      }
+    ]
+  },
+  {
+    "original": "/webdev/index.html?type=Web%20Development",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/webdev/index.html?type=Web%20Development",
+        "status": 301,
+        "location": "/web-development/?type=Web%20Development",
+        "robots": null
+      },
+      {
+        "url": "https://resistanceandground.com/web-development/?type=Web%20Development",
+        "status": 200,
+        "location": null,
+        "robots": null
+      }
+    ],
+    "canonical": "https://resistanceandground.com/web-development/"
+  },
+  {
+    "original": "/web-development/arcade/games/urine-trouble/",
+    "chain": [
+      {
+        "url": "https://resistanceandground.com/web-development/arcade/games/urine-trouble/",
+        "status": 200,
+        "location": null,
+        "robots": "noindex, follow"
+      }
+    ]
+  }
+]

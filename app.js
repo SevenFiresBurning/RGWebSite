@@ -25,15 +25,18 @@ menu?.addEventListener('click', () => {
 dropdowns.forEach(dropdown => {
   const toggle = dropdown.querySelector('.nav-submenu-toggle');
   const overview = dropdown.querySelector('.nav-overview');
+  let openedByHover=false;
   const toggleSubmenu = () => {
-    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    const open = openedByHover || toggle.getAttribute('aria-expanded') !== 'true';
+    openedByHover=false;
     if (open) openSubmenu(dropdown); else setSubmenu(dropdown, false);
   };
   toggle.addEventListener('click', toggleSubmenu);
   dropdown.addEventListener('pointerenter', event => {
-    if (!mobileNav.matches && event.pointerType !== 'touch') openSubmenu(dropdown);
+    if (!mobileNav.matches && event.pointerType !== 'touch') {openSubmenu(dropdown);openedByHover=true;}
   });
   dropdown.addEventListener('pointerleave', () => {
+    openedByHover=false;
     if (!mobileNav.matches && !dropdown.contains(document.activeElement)) setSubmenu(dropdown, false);
   });
   overview.addEventListener('focus', () => { if (!mobileNav.matches) openSubmenu(dropdown); });
@@ -92,11 +95,3 @@ document.querySelector('#inquiry-form')?.addEventListener('submit',async event=>
  }
 });
 
-const reel=document.querySelector('#production-video');
-const reelAudio=document.querySelector('.reel-audio');
-if(reel&&reelAudio){
- const updateAudio=()=>{const enabled=!reel.muted;reelAudio.textContent=enabled?'Sound off':'Sound on';reelAudio.setAttribute('aria-pressed',String(enabled));};
- reelAudio.addEventListener('click',()=>{reel.muted=!reel.muted;if(reel.paused)reel.play().catch(()=>{});updateAudio();});
- reel.addEventListener('volumechange',updateAudio);
- updateAudio();
-}
