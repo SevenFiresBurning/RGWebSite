@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+<title id="title">A little trouble at the haunted cabaret</title><desc id="desc">A wide-eyed black spider grins beside a branching silver coat rack full of theatrical hats, with velvet curtains, cobwebs and a crooked piano.</desc>
+<defs>
+<radialGradient id="room"><stop stop-color="#705572"/><stop offset="1" stop-color="#201d30"/></radialGradient>
+<linearGradient id="velvet" x2="1" y2="0"><stop stop-color="#381425"/><stop offset=".35" stop-color="#912f49"/><stop offset=".65" stop-color="#5c1c32"/><stop offset="1" stop-color="#2c1124"/></linearGradient>
+<linearGradient id="silver"><stop stop-color="#727a86"/><stop offset=".4" stop-color="#e4e1d9"/><stop offset=".65" stop-color="#a3a8b1"/><stop offset="1" stop-color="#555d71"/></linearGradient>
+<radialGradient id="pool"><stop stop-color="#e6b36b" stop-opacity=".4"/><stop offset="1" stop-color="#e6b36b" stop-opacity="0"/></radialGradient>
+<pattern id="keys" width="18" height="30" patternUnits="userSpaceOnUse"><path fill="#eddfbd" stroke="#302536" d="M0 0h18v30H0z"/><path fill="#272331" d="M11 0h6v17h-6z"/></pattern>
+</defs>
+<path fill="url(#room)" d="M0 0h960v540H0z"/>
+<path fill="#e0ae6f" opacity=".09" d="M315 15 110 485h590Z"/><path fill="#ac8ad1" opacity=".12" d="m705 20-280 465h450Z"/>
+<path fill="#36273b" stroke="#171723" stroke-width="7" d="M0 456q480-35 960 0v84H0Z"/>
+<ellipse cx="473" cy="466" rx="350" ry="84" fill="url(#pool)"/>
+<g stroke="#251927" stroke-width="4" fill="url(#velvet)"><path d="M0 0h195q-4 131-65 258L98 479 0 501Z"/><path d="M960 0H765q4 131 65 258l32 221 98 22Z"/><path d="M0 0h960v47Q804 94 672 42 480 118 288 42 135 99 0 47Z"/></g>
+<g fill="none" stroke="#bd6270" stroke-width="3" opacity=".32"><path d="M40 55q39 155-17 379M91 70q47 126-31 381M148 70q22 81-55 213M920 55q-39 155 17 379M869 70q-47 126 31 381M812 70q-22 81 55 213"/></g>
+<g fill="none" stroke="#d8cfc8" stroke-width="1.5" opacity=".55"><path d="m166 55 145 2m-145-2 109 101M166 55l15 147M166 55l68 139M166 55l135 51M181 57q0 12-12 17m36-17q0 37-33 43m62-44q-4 60-57 70m88-70q-2 87-85 99m119-99q-5 111-114 126M794 55 649 57m145-2L685 156M794 55l-15 147M794 55l-68 139M794 55l-135 51M779 57q0 12 12 17m-36-17q0 37 33 43m-62-44q4 60 57 70m-88-70q2 87 85 99m-119-99q5 111 114 126"/></g>
+<!-- A deliberately crooked upright piano, kept behind the performers. -->
+<g transform="translate(653 285) rotate(5)" stroke="#1d1c29" stroke-width="5" stroke-linejoin="round"><path fill="#49304a" d="M0 0 153-14l10 99L0 94Z"/><path fill="#75516a" d="m-8-4 168-15 4 15L-6 11Z"/><path fill="url(#keys)" d="m-12 64 181-11 4 30-187 12Z"/><path fill="#3c293b" d="m-7 94 169-10-2 15L-3 109Z"/><path d="m12 107-4 49m131-60 11 48"/><path fill="#653b4f" d="m-35 143 92-7 3 14-91 8Z"/><path d="m-24 158-4 23m72-30 6 24"/></g>
+<!-- Silver branching rack and varied stage hats. -->
+<g stroke="#242333" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"><path fill="none" d="M542 110v329m-3-249-76-35v-32m81 111 72-35v-31m-76 118-77-28v-29m80 105 63-25v-26"/><path fill="none" stroke="url(#silver)" stroke-width="10" d="M542 110v329m-3-249-76-35v-32m81 111 72-35v-31m-76 118-77-28v-29m80 105 63-25v-26"/><circle cx="542" cy="106" r="13" fill="url(#silver)"/><path fill="url(#silver)" d="m540 423-55 36 59-17 55 18-48-37Z"/>
+<g transform="translate(453 115) rotate(-12)"><path fill="#af74a0" d="m-27 0 5-38 43-2 7 40Z"/><path stroke="#daa95d" stroke-width="8" d="M-24-8h48"/><path fill="#af74a0" d="M-40 0q36-10 79 0l-2 8q-37 10-75 0Z"/></g>
+<g transform="translate(618 165) rotate(15)"><path fill="#d6a354" d="M-31 0q-1-48 31-44Q30-43 29 0Z"/><path fill="#d6a354" d="M-41 0q43-9 82 0v9h-82Z"/><path stroke="#86434e" d="M-29-7h57"/></g>
+<g transform="translate(455 255) rotate(9)"><path fill="#668c94" d="M-37-4q5-37 46-30 35 8 25 34Z"/><path fill="#b78e69" d="M-40 0q27-14 81-6L18 10Z"/></g>
+<g transform="translate(608 303) rotate(-12)"><path fill="#b04e64" d="M-34-8q7-26 45-19 25 4 24 22Q4 18-34-8Z"/><path d="m5-27 9-10"/><path fill="#e6be6e" d="m-15 0 31-3"/></g></g>
+<!-- Mischievous spider: broad readable silhouette and expressive face. -->
+<ellipse cx="332" cy="463" rx="112" ry="17" fill="#151725" opacity=".65"/>
+<g fill="none" stroke="#161823" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="m296 373-56-34-25 33m74 25-65-5-31 36m104-11-50 28-8 23m135-92 48-50 34 19m-69 52 71-13 31 25m-103 9 57 24 17 25m-118-89-39-61-31 6m123 49 23-65 32-11"/></g>
+<path fill="#242634" stroke="#111521" stroke-width="6" d="M275 377q-9-64 57-69 61 1 66 61 25 69-54 76-72 1-69-68Z"/>
+<ellipse cx="309" cy="360" rx="20" ry="26" fill="#f0e9d3" transform="rotate(-12 309 360)"/><ellipse cx="356" cy="356" rx="23" ry="29" fill="#f0e9d3" transform="rotate(9 356 356)"/>
+<ellipse cx="317" cy="364" rx="8" ry="12" fill="#171925"/><ellipse cx="363" cy="361" rx="9" ry="13" fill="#171925"/><circle cx="320" cy="360" r="3" fill="#fff"/><circle cx="366" cy="357" r="3" fill="#fff"/>
+<path fill="none" stroke="#111521" stroke-width="5" stroke-linecap="round" d="m291 330 26-9m29-4 28 9m-63 72q26 21 51-5"/><path fill="#eae0d0" d="m323 404 8 11 4-9m10-2 7 9 3-13"/><g fill="#a06478" opacity=".6"><ellipse cx="291" cy="389" rx="9" ry="5"/><ellipse cx="379" cy="384" rx="9" ry="5"/></g>
+<path fill="none" stroke="#d5c8cc" stroke-width="2" opacity=".65" d="M333 80v204m0 0-7 16m7-16 9 15"/>
+<g fill="#eab86d"><ellipse cx="181" cy="496" rx="14" ry="5"/><ellipse cx="480" cy="507" rx="14" ry="5"/><ellipse cx="782" cy="496" rx="14" ry="5"/></g>
+</svg>
