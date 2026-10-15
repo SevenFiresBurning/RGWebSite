@@ -57,8 +57,7 @@ function canonicalLinks(html,file){return html.replace(/href="([^"]+)"/g,(match,
 });}
 for(const p of config.pages){let s=p.article?articlePage(p,config):fs.readFileSync(root+'/'+p.file,'utf8');
 s=s.replace(/<!-- rg:connections -->[\s\S]*?<!-- \/rg:connections -->/g,'').replace(/<!-- rg:connection-assets -->[\s\S]*?<!-- \/rg:connection-assets -->/g,'');
-s=s.replace('</head>',`<!-- rg:connection-assets --><link rel="stylesheet" href="${relative(p.file,'connection-panel.css')}?v=contact-2" /><script src="${relative(p.file,'connection-panel.js')}?v=contact-2" defer></script><!-- /rg:connection-assets --></head>`);
-s=s.replace(/<footer\b/,connectionPanel(p,config)+'<footer');
+s=s.replace('</head>',`<!-- rg:connection-assets --><link rel="stylesheet" href="${relative(p.file,'connection-panel.css')}?v=compact-3" /><script src="${relative(p.file,'connection-panel.js')}?v=compact-3" defer></script><!-- /rg:connection-assets --></head>`);
 s=s.replace(/<!-- rg:article-list -->[\s\S]*?<!-- \/rg:article-list -->/,'<!-- rg:article-list -->'+articleListing(p,config)+'<!-- /rg:article-list -->');s=s.replace(/<header\b[^>]*>[\s\S]*?<\/header>/,header(p));s=s.replace(/<!-- rg:metadata -->[\s\S]*?<!-- \/rg:metadata -->/,metadata(p));
 const crumbs=`<nav class="breadcrumbs" aria-label="Breadcrumb"><ol>${ancestors(p).map((a,i,list)=>`<li>${i===list.length-1?`<span aria-current="page">${esc(a.title)}</span>`:`<a href="${relative(p.file,a.file)}">${a.file==='index.html'?'Home':esc(a.title)}</a>`}</li>`).join('')}</ol></nav>`;
 s=s.replace(/<!-- rg:breadcrumbs -->[\s\S]*?<!-- \/rg:breadcrumbs -->/,'<!-- rg:breadcrumbs -->'+crumbs+'<!-- /rg:breadcrumbs -->');// Shared decoration remains generated, including article-template outputs.
@@ -69,6 +68,8 @@ if(p.file!=='index.html'){
  s=s.replace('<!-- /rg:breadcrumbs -->','<!-- /rg:breadcrumbs --><!-- rg:component-start -->'+componentLine()+'<!-- /rg:component-start -->');
  s=s.replace('</main>','<!-- rg:component-end -->'+componentLine(true)+'<!-- /rg:component-end --></main>');
 }
+if(p.file==='index.html')s=s.replace(/(<section class="home-hero">[\s\S]*?<\/section>)/,'$1'+connectionPanel(p,config));
+else s=s.replace('<!-- /rg:component-start -->','<!-- /rg:component-start -->'+connectionPanel(p,config));
 output(p.file,canonicalLinks(s,p.file))}
 const rules=[];
 for(const[from,to]of Object.entries(config.redirects)){const dest='/'+to.replace(/index\.html$/,'');for(const old of from.endsWith('/index.html')?['/'+from,'/'+from.replace(/index\.html$/,''),'/'+from.replace(/\/index\.html$/,'')]:['/'+from])rules.push(`${old} ${dest} 301`)}

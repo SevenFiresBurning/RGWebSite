@@ -76,6 +76,9 @@ for(const page of config.pages){
  const panel=html.match(/<!-- rg:connections -->([\s\S]*?)<!-- \/rg:connections -->/)[1];
  assert(!/<button|aria-pressed|role="switch"/.test(panel),'Connections must remain normal links '+page.file);
  assert(panel.includes('class="patch-conductor"')&&panel.includes('class="patch-signal"'),'Continuous current layer missing '+page.file);
+ if(page.file==='index.html')assert(/<div class="ground-rule"[\s\S]*?<\/section><!-- rg:connections -->/.test(html),'Homepage panel must follow the existing hero ground rule');
+ else assert(html.includes('<!-- /rg:component-start --><!-- rg:connections -->'),'Panel must immediately follow the unchanged top component line '+page.file);
+ assert(html.indexOf('<!-- rg:connections -->')<html.indexOf('</main>'),'Panel remains in footer '+page.file);
  for(const group of config.connections)for(const port of group.ports)assert(html.includes(`href="${port.href}" target="_blank" rel="noopener noreferrer"`),'Connection destination drift '+page.file+' '+port.label);
 }
 assert.equal((home.match(/https:\/\/www\.facebook\.com\/share\/19Q4v9B4Rc\//g)||[]).length,1,'Duplicate R&G Facebook link on homepage');

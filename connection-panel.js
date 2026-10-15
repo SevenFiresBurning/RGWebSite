@@ -22,7 +22,7 @@
         d+=` H${point.x}`;
       }
       const ground=panel.querySelector('.patch-ground').getBoundingClientRect();
-      d+=` H${box.width-8} V${box.height-42} H${ground.left-box.left+ground.width/2} V${ground.top-box.top+3}`;
+      d+=` H${box.width-8} V${ground.top-box.top-6} H${ground.left-box.left+ground.width/2} V${ground.top-box.top+3}`;
       svg.setAttribute('viewBox',`0 0 ${box.width} ${box.height}`);
       svg.querySelector('.patch-conductor').setAttribute('d',d);
       svg.querySelector('.patch-signal').setAttribute('d',d);
@@ -30,7 +30,7 @@
       points.forEach((point,index)=>{
         const group=document.createElementNS(ns,'g');group.classList.add('patch-branch');group.dataset.port=index;
         const lead=document.createElementNS(ns,'path');lead.setAttribute('d',`M${point.x} ${point.bus} V${point.y}`);
-        const dot=document.createElementNS(ns,'circle');dot.setAttribute('cx',point.x);dot.setAttribute('cy',point.bus);dot.setAttribute('r','2.3');
+        const dot=document.createElementNS(ns,'circle');dot.setAttribute('cx',point.x);dot.setAttribute('cy',point.bus);dot.setAttribute('r','1.8');
         group.append(lead,dot);branches.append(group);select(links[index],index);
       });
       panel.classList.add('is-wired');
