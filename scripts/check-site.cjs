@@ -7,7 +7,7 @@ for(const file of files){const s=read(file);const ids=[...s.matchAll(/\bid="([^"
 for(const [,value]of s.matchAll(/(?:href|src|poster)="([^"]+)"/g)){if(/^(https?:|mailto:|data:)/.test(value))continue;const u=new URL(value,'https://local/'+file);let target=decodeURIComponent(u.pathname.slice(1));if(!target||target.endsWith('/'))target+='index.html';existsExact(target);if(u.hash&&target.endsWith('.html')&&!config.redirects[target])assert(read(target).includes(`id="${u.hash.slice(1)}"`),'Missing fragment '+file+' '+value);}
 if(!config.redirects[file]){const p=config.pages.find(p=>p.file===file);assert(s.includes(`href="${config.siteUrl+'/'+file.replace(/index\.html$/,'')}"`),'Canonical '+file);assert(!/Web Development|Selected Projects|Industry Links|Templates|>Production(?:\.|<)/.test(s),'Stale discipline label '+file);assert(s.includes('formspree.io/f/mljdnpzl'),'Missing mailing form '+file);assert(s.includes('rgv4.css'),'Missing shared styles '+file);for(const [,json]of s.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g))JSON.parse(json)}
 }
-for(const file of ['app.js','mailing-list.js','legacy-redirect.js','webdev/systems.js','scripts/article-layout.cjs','scripts/sync-site.cjs'])cp.execFileSync(process.execPath,['--check',root+'/'+file]);
+for(const file of ['app.js','mailing-list.js','legacy-redirect.js','connection-panel.js','webdev/systems.js','scripts/connection-panel.cjs','scripts/article-layout.cjs','scripts/sync-site.cjs'])cp.execFileSync(process.execPath,['--check',root+'/'+file]);
 for(const page of config.pages.filter(p=>p.article)){
  const html=read(page.file);
  assert(html.includes(read(page.article.content)),'Article body drift '+page.file);
@@ -68,4 +68,15 @@ assert(!config.pages.some(p=>p.file==='resources/articles/index.html'),'Retired 
 for(const page of config.pages.filter(p=>p.article))assert.equal(page.parent,'resources/index.html','Article must be a direct Resources child');
 assert.equal((read('resources/index.html').match(/class="article-card"/g)||[]).length,config.pages.filter(p=>p.article).length,'Published Resources card count');
 assert(!read('resources/index.html').includes('Explore Articles'),'Redundant Resources gateway');
+for(const page of config.pages){
+ const html=read(page.file);
+ assert.equal((html.match(/class="patch-panel"/g)||[]).length,1,'Missing or duplicated shared connection panel '+page.file);
+ assert.equal((html.match(/class="patch-port"/g)||[]).length,6,'Connection port count '+page.file);
+ assert.equal((html.match(/class="patch-switch"/g)||[]).length,6,'Momentary contact count '+page.file);
+ const panel=html.match(/<!-- rg:connections -->([\s\S]*?)<!-- \/rg:connections -->/)[1];
+ assert(!/<button|aria-pressed|role="switch"/.test(panel),'Connections must remain normal links '+page.file);
+ assert(panel.includes('class="patch-conductor"')&&panel.includes('class="patch-signal"'),'Continuous current layer missing '+page.file);
+ for(const group of config.connections)for(const port of group.ports)assert(html.includes(`href="${port.href}" target="_blank" rel="noopener noreferrer"`),'Connection destination drift '+page.file+' '+port.label);
+}
+assert.equal((home.match(/https:\/\/www\.facebook\.com\/share\/19Q4v9B4Rc\//g)||[]).length,1,'Duplicate R&G Facebook link on homepage');
 console.log(`PASS: ${config.pages.length} canonical pages, ${Object.keys(config.redirects).length} legacy pages, case-sensitive paths, fragments, metadata, labels, forms, and JS syntax.`);

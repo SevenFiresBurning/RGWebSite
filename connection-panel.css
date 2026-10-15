@@ -1,0 +1,70 @@
+/* Momentary electrical contacts; destinations remain ordinary external links. */
+.patch-panel { --patch-wire:#536276; position:relative; width:min(860px,86%); box-sizing:border-box; margin:0 auto 36px; padding:16px 24px 36px; background:#11151a; border:1px solid #434c58; border-radius:3px; color:#e6eaf0; }
+.patch-plate { display:flex; justify-content:space-between; gap:16px; padding-bottom:16px; color:#aab4c1; font:11px/1.5 ui-monospace,monospace; letter-spacing:.12em; }
+.patch-groups { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:40px; }
+.patch-group { position:relative; min-width:0; padding-bottom:18px; }
+.patch-group h2 { font:700 12px/1.5 ui-monospace,monospace; letter-spacing:.18em; margin:0 0 12px; color:#b8c9ff; }
+.patch-group ul { position:relative; isolation:isolate; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; list-style:none; margin:0; padding:0; }
+.patch-group ul::before { content:''; position:absolute; z-index:-1; top:28px; left:16.66%; right:16.66%; height:1px; background:var(--patch-wire); }
+.patch-port { display:flex; flex-direction:column; align-items:center; justify-content:start; gap:10px; min-width:0; min-height:82px; color:inherit; text-decoration:none; padding:2px; border-radius:2px; }
+.patch-socket { box-sizing:border-box; display:grid; place-items:center; flex:none; width:54px; height:54px; border:1px solid #8994a2; border-radius:50%; background:#090c10; box-shadow:inset 0 0 0 4px #252d37,inset 0 0 0 5px #526071; transition:background-color .2s,border-color .2s; }
+.patch-socket img { display:block; width:24px; height:24px; object-fit:contain; filter:brightness(0) invert(1); }
+.patch-label { font:12px/1.5 ui-monospace,monospace; text-align:center; overflow-wrap:anywhere; }
+.patch-port:is(:hover,:focus-visible) .patch-socket { background:#243354; border-color:#afc1ff; }
+.patch-port:is(:hover,:focus-visible) .patch-label { color:#c6d3ff; }
+.patch-port:focus-visible { outline:2px solid #afc1ff; outline-offset:3px; }
+.patch-group::after { content:''; position:absolute; height:18px; width:1px; left:50%; bottom:0; background:var(--patch-wire); }
+.patch-panel::after { content:''; position:absolute; height:1px; bottom:36px; left:25%; right:25%; background:var(--patch-wire); }
+.patch-ground { position:absolute; z-index:1; left:50%; bottom:6px; transform:translateX(-50%); color:#9eb4f5; font:30px/1 sans-serif; }
+.patch-ground::before { content:''; position:absolute; left:50%; bottom:100%; width:1px; height:7px; background:var(--patch-wire); }
+@media(max-width:600px) {
+  .patch-panel { padding-inline:16px; }
+  .patch-groups { grid-template-columns:minmax(0,1fr); gap:18px; }
+  .patch-group { padding-bottom:12px; }
+  .patch-group + .patch-group { padding-top:16px; border-top:1px solid #333e4d; }
+  .patch-group::after { display:none; }
+  .patch-panel::after { left:16px; right:16px; }
+}
+@media(prefers-reduced-motion:reduce) { .patch-socket { transition:none; } }
+@media(forced-colors:active) { .patch-port:focus-visible { outline:2px solid Highlight; } .patch-socket { border-color:ButtonText; } }
+
+.patch-panel { background:linear-gradient(150deg,#181d24,#101419); box-shadow:inset 0 1px #68748133,inset 0 -1px #000; }
+.patch-plate,.patch-groups { position:relative; z-index:1; }
+.patch-plate,.patch-label,.patch-group h2 { text-shadow:0 1px #000; }
+.patch-group h2 { margin-bottom:24px; }
+.patch-contact { position:relative; display:flex; align-items:center; justify-content:center; gap:6px; min-height:54px; }
+.patch-socket { width:48px; height:48px; }
+.patch-contact .patch-switch { position:relative; display:block; width:26px; height:34px; box-sizing:border-box; border:1px solid #68717d; border-radius:3px; background:linear-gradient(135deg,#3b444f,#10151b 48%,#2c343e); box-shadow:inset 0 1px 3px #000; }
+.patch-switch::before { content:''; position:absolute; width:12px; height:12px; left:5px; bottom:4px; border:1px solid #8a939f; border-radius:50%; background:radial-gradient(circle,#0b0e12 35%,#7c8692 40%,#303942 65%); }
+.patch-switch::after { content:''; position:absolute; left:-7px; width:6px; top:50%; height:1px; background:var(--patch-wire); }
+.patch-stem { position:absolute; z-index:1; width:6px; height:23px; left:9px; bottom:10px; border:1px solid #9ba5b0; border-radius:3px 3px 2px 2px; background:linear-gradient(90deg,#59636e,#e1e7ec 42%,#7b8794 70%,#2a333d); box-shadow:1px 2px 2px #0008; transform-origin:50% 100%; transform:rotate(-22deg); transition:transform .12s ease; }
+.patch-led { position:absolute; width:4px; height:4px; top:3px; right:2px; border-radius:50%; background:#49584e; border:1px solid #111; }
+.patch-port:is(.is-contact,:active) .patch-stem { transform:rotate(22deg); }
+.patch-port:is(.is-contact,:active) .patch-led { background:#c3ddb3; box-shadow:0 0 3px #c3ddb34d; }
+.patch-port.is-contact .patch-socket { border-color:#c6d3ff; background:#243354; }
+.patch-current { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:visible; }
+.patch-current path { fill:none; stroke:var(--patch-wire); stroke-width:1; vector-effect:non-scaling-stroke; stroke-linejoin:round; }
+.patch-current .patch-signal { stroke:#b4c6ff; stroke-width:1.5; stroke-dasharray:45 955; stroke-dashoffset:1000; animation:patch-current-flow 8s linear infinite; }
+.patch-branch circle { fill:var(--patch-wire); }
+.patch-branch.is-selected path { stroke:#b4c6ff; stroke-width:1.5; }
+.patch-branch.is-selected circle { fill:#c9d6ff; }
+.patch-panel.is-wired::after,.patch-panel.is-wired .patch-group::after,.patch-panel.is-wired .patch-group ul::before { display:none; }
+@keyframes patch-current-flow { to { stroke-dashoffset:0; } }
+@media(max-width:420px) {
+  .patch-contact { gap:4px; }
+  .patch-socket { width:42px; height:42px; }
+  .patch-contact .patch-switch { width:20px; height:32px; }
+  .patch-switch::before { left:2px; }
+  .patch-stem { left:6px; height:22px; }
+  .patch-switch::after { left:-5px; width:4px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .patch-current .patch-signal { animation:none; display:none; }
+  .patch-stem { transition:none; transform:none; }
+  .patch-port:is(.is-contact,:active) .patch-stem { transform:none; }
+}
+@media(forced-colors:active) {
+  .patch-current path { stroke:CanvasText; }
+  .patch-branch circle { fill:CanvasText; }
+  .patch-stem { background:ButtonText; }
+}

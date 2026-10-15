@@ -1,0 +1,7 @@
+const path=require('node:path');
+const escape=value=>value.replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');
+function connectionPanel(page,config) {
+  const groups=config.connections.map(group=>`<nav class="patch-group" aria-labelledby="patch-${group.id}"><h2 id="patch-${group.id}">${escape(group.label)}</h2><ul>${group.ports.map(port=>`<li><a class="patch-port" href="${escape(port.href)}" target="_blank" rel="noopener noreferrer" aria-label="${escape(port.label)} (opens in a new tab)"><span class="patch-contact" aria-hidden="true"><span class="patch-socket"><img src="${path.posix.relative(path.posix.dirname(page.file),port.icon)}" width="24" height="24" alt="" loading="lazy" /></span><span class="patch-switch"><span class="patch-stem"></span><span class="patch-led"></span></span></span><span class="patch-label">${escape(port.label)}</span></a></li>`).join('')}</ul></nav>`).join('');
+  return `<!-- rg:connections --><section class="patch-panel" aria-label="Social and payment connections"><svg class="patch-current" aria-hidden="true" focusable="false" preserveAspectRatio="none"><path class="patch-conductor" /><path class="patch-signal" pathLength="1000" /><g class="patch-branches"></g></svg><div class="patch-plate"><span>R&amp;G / CONNECTIONS</span><span>01—06</span></div><div class="patch-groups">${groups}</div><span class="patch-ground" aria-hidden="true">⏚</span></section><!-- /rg:connections -->`;
+}
+module.exports={connectionPanel};

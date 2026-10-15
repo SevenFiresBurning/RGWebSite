@@ -190,5 +190,49 @@
       "height": 941,
       "alt": "The MLC lettering on torn paper, connected by musical notes to a page of sheet music"
     }
-  }
+  },
+  "connections": [
+    {
+      "id": "follow",
+      "label": "FOLLOW",
+      "ports": [
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/share/19Q4v9B4Rc/",
+          "icon": "assets/social/facebook.svg"
+        },
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/resistground/",
+          "icon": "assets/social/instagram.svg"
+        },
+        {
+          "label": "TikTok",
+          "href": "https://www.tiktok.com/@resistground",
+          "icon": "assets/social/tiktok.svg"
+        }
+      ]
+    },
+    {
+      "id": "pay",
+      "label": "PAY",
+      "ports": [
+        {
+          "label": "PayPal",
+          "href": "https://paypal.me/ResistGround",
+          "icon": "assets/social/paypal.svg"
+        },
+        {
+          "label": "Venmo",
+          "href": "https://venmo.com/u/ResistGround",
+          "icon": "assets/social/venmo.svg"
+        },
+        {
+          "label": "Cash App",
+          "href": "https://cash.app/$ResistGround",
+          "icon": "assets/social/cash-app.svg"
+        }
+      ]
+    }
+  ]
 }
