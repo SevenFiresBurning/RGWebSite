@@ -10,8 +10,8 @@
     }
     function draw() {
       const box=panel.getBoundingClientRect(); if(!box.width) return;
-      const points=links.map(link=>{const socket=link.querySelector('.patch-socket').getBoundingClientRect();return {x:socket.left-box.left+socket.width/2,y:socket.top-box.top,bus:socket.top-box.top-12};});
-      let d=`M4 ${points[0].bus} H10 l4 -4 4 8 4 -8 4 8 4 -4 H${points[0].x}`;
+      const points=links.map(link=>{const socket=link.querySelector('.patch-socket').getBoundingClientRect();return {x:socket.left-box.left+socket.width/2,y:socket.top-box.top,bus:socket.top-box.top-8};});
+      let d=`M4 ${points[0].bus} H10 l3 -3 3 6 3 -6 3 6 3 -3 H${points[0].x}`;
       const groups=[...panel.querySelectorAll('.patch-group')];
       for(let i=1;i<points.length;i++) {
         const previous=points[i-1],point=points[i];
@@ -30,7 +30,7 @@
       points.forEach((point,index)=>{
         const group=document.createElementNS(ns,'g');group.classList.add('patch-branch');group.dataset.port=index;
         const lead=document.createElementNS(ns,'path');lead.setAttribute('d',`M${point.x} ${point.bus} V${point.y}`);
-        const dot=document.createElementNS(ns,'circle');dot.setAttribute('cx',point.x);dot.setAttribute('cy',point.bus);dot.setAttribute('r','1.8');
+        const dot=document.createElementNS(ns,'circle');dot.setAttribute('cx',point.x);dot.setAttribute('cy',point.bus);dot.setAttribute('r','1.2');
         group.append(lead,dot);branches.append(group);select(links[index],index);
       });
       panel.classList.add('is-wired');
