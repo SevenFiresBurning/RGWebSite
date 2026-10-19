@@ -218,3 +218,21 @@ img[src$="Swilson.JPEG"] {
 .artist-roster .portfolio-item { margin: 0; }
 .artist-roster img { display: block; width: 100%; height: auto; }
 .contact-strip .artist-actions { margin-top: 0; flex-wrap: wrap; }
+
+/* Approved AfterFall crow crop: original image referenced through an SVG viewport. */
+.afterfall-world { position:relative; isolation:isolate; }
+.afterfall-crow-watermark { position:absolute; z-index:-1; pointer-events:none; top:8px; right:0; width:min(640px,85%); height:auto; opacity:.3; mask-image:linear-gradient(#000 65%,transparent); }
+.afterfall-world::before { content:''; position:absolute; z-index:-2; pointer-events:none; inset:0; background:radial-gradient(ellipse at 72% 22%,#e6a34555,transparent 68%); animation:afterfall-sunset 24s ease-in-out infinite alternate; }
+@keyframes afterfall-sunset { from { opacity:.4; } to { opacity:.9; } }
+@media(max-width:600px) { .afterfall-crow-watermark { width:100%; top:40px; opacity:.23; } }
+@media(prefers-reduced-motion:reduce) { .afterfall-world::before { animation:none; opacity:.6; } }
+@media(forced-colors:active) { .afterfall-world::before,.afterfall-crow-watermark { display:none; } }
+
+/* Heading circuit spans the viewport; the ground descends in the title's clear right gutter. */
+.visitor-routing { position:relative; padding-top:44px; }
+.visitor-routing > h2 { width:fit-content; max-width:calc(100% - 48px); }
+.routing-heading-circuit { position:absolute; pointer-events:none; top:0; left:calc(-7vw); width:100vw; height:110px; color:var(--control-border); overflow:visible; }
+.routing-heading-circuit path { fill:none; stroke:currentColor; stroke-width:1.4; vector-effect:non-scaling-stroke; }
+.routing-heading-circuit .circuit-signal { stroke:var(--home-signal); stroke-dasharray:8 100; stroke-dashoffset:8; opacity:0; animation:homeCircuitSignal 5s linear infinite; }
+@media(min-width:1600px) { .routing-heading-circuit { left:calc((100% - 100vw) / 2); } }
+@media(prefers-reduced-motion:reduce) { .routing-heading-circuit .circuit-signal { animation:none; } }

@@ -23,7 +23,8 @@
       "file": "music-media/artists-collaborations/music/mikes-wilson/index.html",
       "title": "Mike’s Wilson",
       "description": "Music, recordings, videos, and updates from Mike’s Wilson.",
-      "parent": "music-media/artists-collaborations/index.html"
+      "parent": "music-media/artists-collaborations/index.html",
+      "image": "assets/rg-social-card.png"
     },
     {
       "file": "music-media/publishing/index.html",
@@ -83,7 +84,18 @@
       "file": "resources/index.html",
       "title": "Resources",
       "description": "Practical information for artists and independent creators. Understand your rights, protect your work, and make informed decisions.",
-      "parent": "music-media/publishing/index.html"
+      "parent": "music-media/publishing/index.html",
+      "navigationLinks": [
+        {
+          "title": "Articles",
+          "file": "resources/index.html",
+          "fragment": "resources-articles-heading"
+        },
+        {
+          "title": "Reference",
+          "file": "resources/reference/index.html"
+        }
+      ]
     },
     {
       "file": "resources/what-is-music-publishing/index.html",
@@ -99,7 +111,8 @@
           "resources/reference/index.html"
         ]
       },
-      "summary": "Understand the difference between a song and a recording, what publishing involves, and the questions to ask about ownership and control."
+      "summary": "Understand the difference between a song and a recording, what publishing involves, and the questions to ask about ownership and control.",
+      "navigation": false
     },
     {
       "file": "resources/what-the-mlc-actually-does/index.html",
@@ -115,6 +128,24 @@
         "related": [
           "resources/what-is-music-publishing/index.html",
           "resources/reference/index.html"
+        ]
+      },
+      "navigation": false
+    },
+    {
+      "file": "resources/articles/distribution-is-not-publishing/index.html",
+      "title": "Distribution Is Not Publishing",
+      "description": "Getting your music on Spotify doesn't mean your publishing is handled. Learn how distribution, songwriting royalties, PROs, and The MLC fit together.",
+      "summary": "Why getting your music onto streaming platforms doesn't mean your songwriting royalties are handled.",
+      "parent": "resources/index.html",
+      "navigation": false,
+      "image": "assets/distribution-is-not-publishing.jpg",
+      "article": {
+        "content": "resources/article-content/distribution-is-not-publishing.html",
+        "intro": "Why getting your music onto streaming platforms doesn't mean your songwriting royalties are handled.",
+        "related": [
+          "resources/what-is-music-publishing/index.html",
+          "resources/what-the-mlc-actually-does/index.html"
         ]
       }
     },
@@ -189,6 +220,16 @@
       "width": 1672,
       "height": 941,
       "alt": "The MLC lettering on torn paper, connected by musical notes to a page of sheet music"
+    },
+    "assets/rg-logo-share.jpg": {
+      "width": 1200,
+      "height": 630,
+      "alt": "Resistance & Ground Publishing — regular circular ground-symbol logo"
+    },
+    "assets/distribution-is-not-publishing.jpg": {
+      "width": 1733,
+      "height": 908,
+      "alt": "A guitar waveform splits into recording distribution to streaming platforms and composition publishing administration, with performance royalties via ASCAP or BMI and digital mechanical royalties via The MLC."
     }
   },
   "connections": [
@@ -234,5 +275,6 @@
         }
       ]
     }
-  ]
+  ],
+  "defaultSocialImage": "assets/rg-logo-share.jpg"
 }

@@ -14,6 +14,37 @@
     mark.append(signal, ground);
   });
 
+  // Full-width heading conductor: use CSS-pixel geometry so components never scale.
+  const headingCircuit = document.querySelector('.routing-heading-circuit');
+  if (headingCircuit) {
+    const section = headingCircuit.closest('.visitor-routing');
+    const heading = section.querySelector('#routing-heading');
+    function drawHeadingCircuit() {
+      headingCircuit.style.width = document.documentElement.clientWidth + 'px';
+      headingCircuit.style.left = -section.getBoundingClientRect().left + 'px';
+      const box = headingCircuit.getBoundingClientRect(), title = heading.getBoundingClientRect();
+      const width = box.width;
+      const end = width - 24, groundY = Math.max(60, title.top - box.top + title.height / 2);
+      // Equal clear wire gaps; both resistors retain the original 48×12px shape.
+      const gap = (end - 48 - 48 - 48 - 8) / 5;
+      const first = gap, second = first + 48 + gap, transformer = second + 48 + gap, cap = transformer + 48 + gap;
+      const resistor = 'l4 -6 8 12 8 -12 8 12 8 -12 8 12 4 -6';
+      const lead = `M0 10 H${first} ${resistor} H${second} ${resistor} H${transformer}`;
+      const coils = `M${transformer} 10 a3 6 0 0 1 6 0 a3 6 0 0 1 6 0 a3 6 0 0 1 6 0 M${transformer+30} 10 a3 6 0 0 1 6 0 a3 6 0 0 1 6 0 a3 6 0 0 1 6 0 M${transformer+22} 2 V18 M${transformer+26} 2 V18`;
+      headingCircuit.setAttribute('viewBox', `0 0 ${width} ${Math.max(110, groundY + 16)}`);
+      headingCircuit.style.height = Math.max(110, groundY + 16) + 'px';
+      headingCircuit.querySelector('.circuit-trace').setAttribute('d', lead + ` M${transformer+48} 10 H${cap} M${cap+8} 10 H${end} V${groundY}`);
+      headingCircuit.querySelector('.routing-transformer').setAttribute('d', coils);
+      headingCircuit.querySelector('.routing-capacitor').setAttribute('d', `M${cap} 3 V17 M${cap+8} 3 V17`);
+      headingCircuit.querySelector('.circuit-signal').setAttribute('d', lead + coils.slice(coils.indexOf('a3'), coils.indexOf(' M')) + ` H${transformer+30} a3 6 0 0 1 6 0 a3 6 0 0 1 6 0 a3 6 0 0 1 6 0 H${end} V${groundY}`);
+      headingCircuit.querySelector('.routing-ground').setAttribute('d', `M${end-12} ${groundY} h24 M${end-8} ${groundY+5} h16 M${end-4} ${groundY+10} h8`);
+    }
+    new ResizeObserver(drawHeadingCircuit).observe(heading);
+    window.addEventListener('resize', drawHeadingCircuit, { passive:true });
+    document.fonts.ready.then(drawHeadingCircuit);
+    drawHeadingCircuit();
+  }
+
   document.querySelectorAll('.page-component-line').forEach(line => {
     const svg = line.querySelector('svg');
     const drawLine = () => {

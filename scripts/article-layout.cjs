@@ -32,7 +32,7 @@ function articlePage(page, config) {
 function articleListing(page, config) {
   return `<section class="article-list" aria-labelledby="resources-articles-heading"><h2 id="resources-articles-heading">Articles</h2>${config.pages.filter(p => p.article).map(p => {
     const image = config.images[p.image];
-    return `<article class="article-card"><img src="${relative(page.file, p.image)}" width="${image.width}" height="${image.height}" alt="${esc(image.alt)}" loading="lazy" /><div><p class="eyebrow">Publishing</p><h3><a href="${relative(page.file, p.file)}">${esc(p.title)}</a></h3><p>${esc(p.summary || p.description)}</p><a class="plain-link" href="${relative(page.file, p.file)}" aria-label="Read Article: ${esc(p.title)}">Read Article <span aria-hidden="true">→</span></a></div></article>`;
+    return `<article class="article-card"><a class="article-art" href="${relative(page.file, p.file)}" aria-label="Read ${esc(p.title)}"><img src="${relative(page.file, p.image)}" width="${image.width}" height="${image.height}" alt="${esc(image.alt)}" loading="lazy" /></a><div><p class="eyebrow">Publishing</p><h3><a href="${relative(page.file, p.file)}">${esc(p.title)}</a></h3><p>${esc(p.summary || p.description)}</p><a class="plain-link" href="${relative(page.file, p.file)}" aria-label="Read Article: ${esc(p.title)}">Read Article <span aria-hidden="true">→</span></a></div></article>`;
   }).join('\n')}</section>`;
 }
 module.exports = { articlePage, articleListing };

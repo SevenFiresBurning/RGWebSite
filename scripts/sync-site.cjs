@@ -9,8 +9,8 @@ const url=f=>config.siteUrl+'/'+f.replace(/index\.html$/,'');
 const relative=(from,to)=>path.posix.relative(path.posix.dirname(from),to)||'index.html';
 function ancestors(p){const result=[];while(p){result.unshift(p);p=byFile.get(p.parent)}return result}
 function header(page){const chain=ancestors(page).map(p=>p.file);
- const link=(f,label,cls='')=>`<a${cls?` class="${cls}"`:''} href="${relative(page.file,f)}"${page.file===f?' aria-current="page"':chain.includes(f)?' aria-current="location"':''}>${esc(label)}</a>`;
- function children(parent){return config.pages.filter(p=>p.parent===parent&&p.navigation!==false).map(p=>`<li>${link(p.file,p.title)}${config.pages.some(c=>c.parent===p.file&&c.navigation!==false)?`<ul>${children(p.file)}</ul>`:''}</li>`).join('\n')}
+ const link=(f,label,cls='',fragment='')=>`<a${cls?` class="${cls}"`:''} href="${relative(page.file,f)}${fragment?'#'+fragment:''}"${fragment?(page.article&&f==='resources/index.html'?' aria-current="location"':''):page.file===f?' aria-current="page"':chain.includes(f)?' aria-current="location"':''}>${esc(label)}</a>`;
+ function children(parent){const overrides=byFile.get(parent)?.navigationLinks;if(overrides)return overrides.map(p=>`<li>${link(p.file,p.title,'',p.fragment||'')}</li>`).join('\n');return config.pages.filter(p=>p.parent===parent&&p.navigation!==false).map(p=>`<li>${link(p.file,p.title)}${config.pages.some(c=>c.parent===p.file&&c.navigation!==false)?`<ul>${children(p.file)}</ul>`:''}</li>`).join('\n')}
  return `<header class="site-header">
   <a class="brand" href="${relative(page.file,'index.html')}" aria-label="Resistance and Ground home"><span class="brand-mark" aria-hidden="true">⏚</span><span>RESISTANCE<br />&amp; GROUND</span></a>
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">+</span></button>
@@ -18,7 +18,7 @@ function header(page){const chain=ancestors(page).map(p=>p.file);
 ${config.navigation.map((f,i)=>{const p=byFile.get(f),kids=config.pages.some(c=>c.parent===f&&c.navigation!==false);if(!kids)return link(f,p.title,f==='contact/index.html'?'nav-contact':'');return `<div class="nav-dropdown"><div class="nav-topline">${link(f,p.title,'nav-overview')}<button class="nav-submenu-toggle" type="button" aria-label="Toggle ${esc(p.title)} submenu" aria-expanded="false" aria-controls="nav-section-${i}"><span aria-hidden="true">⌄</span></button></div><div class="nav-submenu" id="nav-section-${i}"><ul>${children(f)}</ul></div></div>`}).join('\n')}
   </nav>
 </header>`}
-function metadata(p){const image=p.image||'assets/rg-social-card.png',imageInfo=config.images[image],isArticle=Boolean(p.article);const entity={'@context':'https://schema.org','@type':isArticle?'Article':'WebPage',name:p.title,description:p.description,url:url(p.file),isPartOf:{'@type':'WebSite',name:'Resistance & Ground',url:config.siteUrl+'/'}};if(isArticle)Object.assign(entity,{headline:p.title,mainEntityOfPage:url(p.file),image:config.siteUrl+'/'+image,author:{'@type':'Organization',name:'Resistance & Ground',url:config.siteUrl+'/'},publisher:{'@type':'Organization',name:'Resistance & Ground',url:config.siteUrl+'/'}});
+function metadata(p){const image=p.image||config.defaultSocialImage||'assets/rg-social-card.png',imageInfo=config.images[image],isArticle=Boolean(p.article);const entity={'@context':'https://schema.org','@type':isArticle?'Article':'WebPage',name:p.title,description:p.description,url:url(p.file),isPartOf:{'@type':'WebSite',name:'Resistance & Ground',url:config.siteUrl+'/'}};if(isArticle)Object.assign(entity,{headline:p.title,mainEntityOfPage:url(p.file),image:config.siteUrl+'/'+image,author:{'@type':'Organization',name:'Resistance & Ground',url:config.siteUrl+'/'},publisher:{'@type':'Organization',name:'Resistance & Ground',url:config.siteUrl+'/'}});
  const crumb={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:ancestors(p).map((a,i)=>({'@type':'ListItem',position:i+1,name:a.file==='index.html'?'Home':a.title,item:url(a.file)}))};
  return `<!-- rg:metadata -->
 <title>${esc(p.file==='index.html'?'Resistance & Ground — Web & Systems, Music & Media, Publishing & Artist Services':p.title+' — Resistance & Ground')}</title>
@@ -45,7 +45,7 @@ function componentLine(end=false){
  const ground='M972 24 h24 M976 29 h16 M980 34 h8';
  return `<div class="page-component-line${end?' page-component-line--end':''}" aria-hidden="true"><svg viewBox="0 0 1000 40" focusable="false"><path class="circuit-trace" d="${lead} ${ground}" /><path class="circuit-signal" pathLength="100" d="${lead}" /><path class="circuit-ground" d="${ground}" /></svg></div>`;
 }
-function output(f,s){if(check){if(!fs.existsSync(root+'/'+f)||fs.readFileSync(root+'/'+f,'utf8')!==s)stale.push(f)}else{fs.mkdirSync(path.dirname(root+'/'+f),{recursive:true});fs.writeFileSync(root+'/'+f,s)}}
+function output(f,s){const target=root+'/'+f,existing=fs.existsSync(target)?fs.readFileSync(target,'utf8'):null;/* Preserve existing files when only platform line endings differ. */if(existing!==null&&existing.replace(/\r\n/g,'\n')===s.replace(/\r\n/g,'\n'))return;if(check)stale.push(f);else{fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,s)}}
 function canonicalLinks(html,file){return html.replace(/href="([^"]+)"/g,(match,href)=>{
  if(/^(https?:|mailto:|data:|tel:|#)/.test(href))return match;
  const target=new URL(href.replaceAll('&amp;','&'),config.siteUrl+'/'+file);
