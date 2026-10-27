@@ -278,5 +278,5 @@
   ],
   "defaultSocialImage": "assets/rg-logo-share.jpg",
   "yesChefDemoUrl": "https://yeschef.resistanceandground.com",
-  "yesChefDemoAvailable": false
+  "yesChefDemoAvailable": true
 }
