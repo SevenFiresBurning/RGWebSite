@@ -236,3 +236,17 @@ img[src$="Swilson.JPEG"] {
 .routing-heading-circuit .circuit-signal { stroke:var(--home-signal); stroke-dasharray:8 100; stroke-dashoffset:8; opacity:0; animation:homeCircuitSignal 5s linear infinite; }
 @media(min-width:1600px) { .routing-heading-circuit { left:calc((100% - 100vw) / 2); } }
 @media(prefers-reduced-motion:reduce) { .routing-heading-circuit .circuit-signal { animation:none; } }
+
+/* YesChef uses the established sharp heading gradient, at a quieter tempo. */
+.yeschef-title { display:inline; color:var(--ink); font-weight:700; text-shadow:none; }
+@supports ((background-clip:text) or (-webkit-background-clip:text)) {
+  .yeschef-title { background:linear-gradient(110deg,var(--ink) 25%,#b9cdfd 45%,var(--ink) 65%); background-size:240% 100%; -webkit-background-clip:text; background-clip:text; color:transparent; animation:yeschef-text-wave 14s ease-in-out infinite alternate; }
+}
+@keyframes yeschef-text-wave { 0%,15% { background-position:100% 0; } 85%,100% { background-position:0 0; } }
+.yeschef-demo-access { margin-top:20px; min-width:0; }
+.yeschef-demo-access .button { min-height:44px; max-width:100%; white-space:normal; overflow-wrap:anywhere; }
+.yeschef-demo-note { max-width:54ch; font-size:14px; line-height:1.6; color:var(--muted); }
+.yeschef-demo-unavailable { cursor:default; border-style:dashed; }
+.yeschef-project-link { display:inline-flex; align-items:center; min-height:44px; margin-top:4px; }
+@media(prefers-reduced-motion:reduce) { .yeschef-title { animation:none; background:none; color:var(--ink); } }
+@media(forced-colors:active) { .yeschef-title { animation:none; background:none; color:CanvasText; } }

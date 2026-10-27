@@ -40,6 +40,11 @@ function metadata(p){const image=p.image||config.defaultSocialImage||'assets/rg-
 <meta name="twitter:image:alt" content="${esc(imageInfo.alt)}" />
 <script type="application/ld+json">${JSON.stringify([entity,crumb]).replaceAll('<','\\u003c')}</script>
 <!-- /rg:metadata -->`}
+function yesChefDemoAction(){
+ const target=new URL(config.yesChefDemoUrl);if(target.protocol!=='https:'||target.hostname==='localhost'||target.hostname==='127.0.0.1')throw new Error('YesChef demo must use a public HTTPS URL');
+ const action=config.yesChefDemoAvailable?`<a class="button button--primary yeschef-demo-link" href="${esc(config.yesChefDemoUrl)}">Open YesChef Demo <span aria-hidden="true">→</span></a>`:'<span class="button yeschef-demo-unavailable" aria-disabled="true">Open YesChef Demo</span>';
+ return '<!-- rg:yeschef-demo-action --><div class="yeschef-demo-access">'+action+'<p class="yeschef-demo-note">Sample Recipes, Vendors, Events, costs, and operational data. Demo data is stored locally in your browser.</p><p class="yeschef-demo-note">'+(config.yesChefDemoAvailable?'Demo data is stored locally in your browser. No account required.':'Demo deployment pending. The public link will be enabled once the prototype is online.')+'</p></div><!-- /rg:yeschef-demo-action -->';
+}
 function componentLine(end=false){
  const lead='M0 12 H18 l4 -5 8 10 8 -10 8 10 4 -5 H482 l4 -5 8 10 8 -10 8 10 4 -5 H984 V24';
  const ground='M972 24 h24 M976 29 h16 M980 34 h8';
@@ -57,6 +62,7 @@ function canonicalLinks(html,file){return html.replace(/href="([^"]+)"/g,(match,
 });}
 for(const p of config.pages){let s=p.article?articlePage(p,config):fs.readFileSync(root+'/'+p.file,'utf8');
 s=s.replace(/<!-- rg:connections -->[\s\S]*?<!-- \/rg:connections -->/g,'').replace(/<!-- rg:connection-assets -->[\s\S]*?<!-- \/rg:connection-assets -->/g,'');
+s=s.replace(/<!-- rg:yeschef-demo-action -->[\s\S]*?<!-- \/rg:yeschef-demo-action -->/g,()=>yesChefDemoAction());
 s=s.replace('</head>',`<!-- rg:connection-assets --><link rel="stylesheet" href="${relative(p.file,'connection-panel.css')}?v=slim-4" /><script src="${relative(p.file,'connection-panel.js')}?v=slim-4" defer></script><!-- /rg:connection-assets --></head>`);
 s=s.replace(/<!-- rg:article-list -->[\s\S]*?<!-- \/rg:article-list -->/,'<!-- rg:article-list -->'+articleListing(p,config)+'<!-- /rg:article-list -->');s=s.replace(/<header\b[^>]*>[\s\S]*?<\/header>/,header(p));s=s.replace(/<!-- rg:metadata -->[\s\S]*?<!-- \/rg:metadata -->/,metadata(p));
 const crumbs=`<nav class="breadcrumbs" aria-label="Breadcrumb"><ol>${ancestors(p).map((a,i,list)=>`<li>${i===list.length-1?`<span aria-current="page">${esc(a.title)}</span>`:`<a href="${relative(p.file,a.file)}">${a.file==='index.html'?'Home':esc(a.title)}</a>`}</li>`).join('')}</ol></nav>`;

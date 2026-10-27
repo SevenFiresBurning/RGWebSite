@@ -47,7 +47,7 @@
     {
       "file": "web-development/built-by-rg/market/index.html",
       "title": "Market",
-      "description": "Live client websites, website templates, business concepts, and YesChef, a restaurant operations and costing tool in development.",
+      "description": "Live client websites, website templates, business concepts, and YesChef, a kitchen operations public prototype.",
       "parent": "web-development/built-by-rg/index.html"
     },
     {
@@ -59,7 +59,7 @@
     {
       "file": "web-development/portfolio/yeschef/index.html",
       "title": "YesChef",
-      "description": "An in-development restaurant costing and operations tool based on real kitchen workflows.",
+      "description": "YesChef public prototype: recipes, food costing, vendor comparison, events, kitchen math, and operational paperwork. Browser-local demonstration data.",
       "parent": "web-development/built-by-rg/market/index.html",
       "image": "assets/YesChefWeb.png",
       "navigation": false
@@ -276,5 +276,7 @@
       ]
     }
   ],
-  "defaultSocialImage": "assets/rg-logo-share.jpg"
+  "defaultSocialImage": "assets/rg-logo-share.jpg",
+  "yesChefDemoUrl": "https://yeschef.resistanceandground.com",
+  "yesChefDemoAvailable": false
 }
