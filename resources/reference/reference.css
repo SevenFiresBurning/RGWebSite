@@ -1,0 +1,97 @@
+/* Reference Desk: static circuit details and compact, readable directory rows. */
+.reference-heading, .reference-directory, .reference-reading {
+  --desk-amber: #c4a46c;
+  --desk-text: #eee8db;
+  --desk-description: #c3bdb2;
+  --desk-divider: #454139;
+  color: var(--desk-text);
+}
+.reference-heading h1 { margin-bottom: 12px; }
+.reference-heading .intro { color: var(--desk-description); }
+.reference-heading-trace {
+  display: flex;
+  align-items: center;
+  width: min(100%, 38rem);
+  margin-bottom: 18px;
+  color: var(--desk-amber);
+}
+.reference-heading-trace > span:not(.reference-heading-capacitor) { position: relative; flex: 1; border-top: 1px solid currentColor; }
+.reference-heading-trace > span:first-child { flex: 2; }
+.reference-heading-trace > span:first-child::before,
+.reference-heading-trace > span:last-child::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.reference-heading-trace > span:first-child::before { left: 0; }
+.reference-heading-trace > span:last-child::after { right: 0; }
+.reference-heading-capacitor { flex: 0 0 9px; height: 20px; border-inline: 1px solid currentColor; }
+.reference-directory {
+  --desk-gap: 32px;
+  --desk-inset: 32px;
+  display: grid;
+  gap: var(--desk-gap);
+  width: min(86%, 54rem);
+  margin: 0 7%;
+  padding-left: var(--desk-inset);
+}
+.reference-group { position: relative; min-width: 0; }
+.reference-group::before {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--desk-gap));
+  bottom: 0;
+  left: calc(8px - var(--desk-inset));
+  border-left: 1px solid var(--desk-amber);
+}
+/* Break the rail between the first two groups; the plates touch the lead ends. */
+.reference-group:first-child::before { top: 12px; bottom: -12px; }
+.reference-group:nth-child(2)::before { top: -12px; }
+.reference-rail-capacitor {
+  position: absolute;
+  top: -21px;
+  left: calc(1px - var(--desk-inset));
+  width: 15px;
+  height: 10px;
+  border-block: 1px solid var(--desk-amber);
+}
+.reference-group h2 { margin: 0 0 10px; font-size: clamp(1.2rem, 2.3vw, 1.65rem); line-height: 1.3; }
+.reference-group h2::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: calc(6px - var(--desk-inset));
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--desk-amber);
+}
+.reference-links { list-style: none; margin: 0; padding: 0; }
+.reference-links li { border-top: 1px solid var(--desk-divider); }
+.reference-links li:last-child { border-bottom: 1px solid var(--desk-divider); }
+.reference-links a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px 12px;
+  min-height: 44px;
+  padding: 12px 10px;
+  color: inherit;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.reference-link-name { grid-column: 1; grid-row: 1; font-weight: 650; line-height: 1.45; }
+.reference-link-description { grid-column: 1; grid-row: 2; color: var(--desk-description); font-size: .925rem; line-height: 1.55; }
+.reference-link-arrow { grid-column: 2; grid-row: 1; color: var(--desk-amber); }
+.reference-links a:is(:hover, :focus-visible) { background: #211f1a; }
+.reference-links a:is(:hover, :focus-visible) .reference-link-name { text-decoration: underline; text-underline-offset: 3px; }
+.reference-links a:focus-visible { outline: 2px solid var(--desk-amber); outline-offset: -2px; }
+.reference-reading { margin: 32px 7% 64px; }
+@media (max-width: 600px) {
+  .reference-directory { --desk-inset: 22px; }
+  .reference-links a { padding-inline: 6px; gap: 4px 8px; }
+}
+@media (forced-colors: active) { .reference-links a:focus-visible { outline-color: Highlight; } }
