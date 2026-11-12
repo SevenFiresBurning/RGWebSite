@@ -150,6 +150,23 @@
       }
     },
     {
+      "file": "resources/articles/pro-vs-mlc/index.html",
+      "title": "PRO vs. MLC: What Each One Handles",
+      "description": "ASCAP, BMI, and The MLC collect different songwriting royalties. Learn how performance and digital mechanical royalties work and what musicians should register.",
+      "summary": "The same song can earn different kinds of royalties. These two organizations handle different parts of the job.",
+      "parent": "resources/index.html",
+      "navigation": false,
+      "image": "assets/pro-vs-mlc.webp",
+      "article": {
+        "content": "resources/article-content/pro-vs-mlc.html",
+        "intro": "The same song can earn different kinds of royalties. These two organizations handle different parts of the job.",
+        "related": [
+          "resources/what-the-mlc-actually-does/index.html",
+          "resources/articles/distribution-is-not-publishing/index.html"
+        ]
+      }
+    },
+    {
       "file": "resources/reference/index.html",
       "title": "Reference",
       "description": "Official resources for music copyright, performance royalties, mechanical licensing, and recording rights.",
@@ -230,6 +247,11 @@
       "width": 1733,
       "height": 908,
       "alt": "A guitar waveform splits into recording distribution to streaming platforms and composition publishing administration, with performance royalties via ASCAP or BMI and digital mechanical royalties via The MLC."
+    },
+    "assets/pro-vs-mlc.webp": {
+      "width": 1672,
+      "height": 941,
+      "alt": "A music note branches toward ASCAP or BMI for public performance royalties and The MLC for covered U.S. digital mechanical royalties from interactive streams and downloads."
     }
   },
   "connections": [

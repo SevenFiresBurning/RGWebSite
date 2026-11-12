@@ -82,3 +82,8 @@
   .article-list .article-card p { font-size:15px; }
   .article-list .article-card .eyebrow { margin-top:0; }
 }
+
+/* Keep the three-column royalty comparison readable within the article width. */
+.royalty-comparison { width:100%; table-layout:fixed; border-collapse:collapse; margin-block:24px; }
+.royalty-comparison th,.royalty-comparison td { border:1px solid var(--line); padding:clamp(6px,1.4vw,14px); text-align:left; vertical-align:top; overflow-wrap:anywhere; }
+@media (max-width:600px) { .royalty-comparison { font-size:14px; line-height:1.5; } }
